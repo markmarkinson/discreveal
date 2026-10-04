@@ -1,0 +1,283 @@
+{
+  "date": "2026-10-01T22:04:54.546Z",
+  "version": "0.2.3",
+  "root": "C:\\xampp",
+  "files": 199746,
+  "bytes": 14948726324,
+  "cpu": "Intel Core i7-6700K",
+  "drive": "Samsung 860 EVO SATA SSD",
+  "workers": 6,
+  "cache": "warm Windows file cache; one untimed warm-up per tool",
+  "timing": "DiscReveal: native click in the already open app until the final list is rendered, finite transitions have finished and two animation frames have passed. Commands: process start to completion.",
+  "aggregation": "Median of five measured runs per method after warm-up. Each app run followed by four commands in rotated order.",
+  "exclusions": [],
+  "nodeVersion": "v22.22.0",
+  "powershellVersion": "7.6.5",
+  "sourceHashes": {
+    "src-tauri/src/scan.rs": "34f0e5b3dbc8485e4055c17c5b954735ad96a89e40de5491b3f1c729031a2b14",
+    "src-tauri/src/scan_directory.rs": "884808e863bfa07f0ee7d566c3f01a380470fe3384bbe400e0979b3bdb7372a4"
+  },
+  "tools": [
+    {
+      "id": "discreveal",
+      "name": "DiscReveal 0.2.3",
+      "chartName": "DiscReveal 0.2.3",
+      "runs": [
+        {
+          "round": 1,
+          "ms": 1208.2999999970198,
+          "domCompleteMs": 1155.5999999940395,
+          "bytes": 14948726324,
+          "rows": 62,
+          "visibleRows": 62,
+          "nativeClick": true,
+          "error": null
+        },
+        {
+          "round": 2,
+          "ms": 1503.5,
+          "domCompleteMs": 1432.5,
+          "bytes": 14948726324,
+          "rows": 62,
+          "visibleRows": 62,
+          "nativeClick": true,
+          "error": null
+        },
+        {
+          "round": 3,
+          "ms": 1142.5,
+          "domCompleteMs": 1096.7999999970198,
+          "bytes": 14948726324,
+          "rows": 62,
+          "visibleRows": 62,
+          "nativeClick": true,
+          "error": null
+        },
+        {
+          "round": 4,
+          "ms": 1189.7999999970198,
+          "domCompleteMs": 1147.3999999985099,
+          "bytes": 14948726324,
+          "rows": 62,
+          "visibleRows": 62,
+          "nativeClick": true,
+          "error": null
+        },
+        {
+          "round": 5,
+          "ms": 1158.6999999955297,
+          "domCompleteMs": 1111.6999999955297,
+          "bytes": 14948726324,
+          "rows": 62,
+          "visibleRows": 62,
+          "nativeClick": true,
+          "error": null
+        }
+      ],
+      "medianMs": 1189.7999999970198
+    },
+    {
+      "id": "robocopy",
+      "name": "robocopy /L",
+      "chartName": "robocopy /L",
+      "runs": [
+        {
+          "round": 1,
+          "ms": 1891.8992999999998,
+          "exitCode": 1,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 2,
+          "ms": 1871.9193000000014,
+          "exitCode": 1,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 3,
+          "ms": 1744.6776000000027,
+          "exitCode": 1,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 4,
+          "ms": 1806.9717999999993,
+          "exitCode": 1,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 5,
+          "ms": 1724.775,
+          "exitCode": 1,
+          "files": 199746,
+          "bytes": 14948726324
+        }
+      ],
+      "medianMs": 1806.9717999999993
+    },
+    {
+      "id": "node",
+      "name": "Node.js recursive walk",
+      "chartName": "Node.js script",
+      "runs": [
+        {
+          "round": 1,
+          "ms": 6950.817099999999,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948727326,
+          "links": 0,
+          "errors": 0,
+          "scanMs": 6862.7351
+        },
+        {
+          "round": 2,
+          "ms": 9414.6756,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948727326,
+          "links": 0,
+          "errors": 0,
+          "scanMs": 9077.1577
+        },
+        {
+          "round": 3,
+          "ms": 6523.087099999997,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948727438,
+          "links": 0,
+          "errors": 0,
+          "scanMs": 6446.4067
+        },
+        {
+          "round": 4,
+          "ms": 6304.0519,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948727438,
+          "links": 0,
+          "errors": 0,
+          "scanMs": 6225.3594
+        },
+        {
+          "round": 5,
+          "ms": 7184.2205,
+          "exitCode": 0,
+          "files": 199748,
+          "bytes": 14948727438,
+          "links": 0,
+          "errors": 0,
+          "scanMs": 7105.1611
+        }
+      ],
+      "medianMs": 6950.817099999999
+    },
+    {
+      "id": "cmd",
+      "name": "cmd dir /s",
+      "chartName": "cmd dir /s",
+      "runs": [
+        {
+          "round": 1,
+          "ms": 16881.151400000002,
+          "exitCode": 0
+        },
+        {
+          "round": 2,
+          "ms": 8824.171900000001,
+          "exitCode": 0
+        },
+        {
+          "round": 3,
+          "ms": 8403.139899999998,
+          "exitCode": 0
+        },
+        {
+          "round": 4,
+          "ms": 7740.8112,
+          "exitCode": 0
+        },
+        {
+          "round": 5,
+          "ms": 7897.9609,
+          "exitCode": 0
+        }
+      ],
+      "medianMs": 8403.139899999998
+    },
+    {
+      "id": "powershell",
+      "name": "PowerShell 7.6.5",
+      "chartName": "PowerShell 7.6.5",
+      "runs": [
+        {
+          "round": 1,
+          "ms": 30059.583899999998,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 2,
+          "ms": 17247.326599999997,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 3,
+          "ms": 11066.2401,
+          "exitCode": 0,
+          "bytes": 14948726324,
+          "files": 199746
+        },
+        {
+          "round": 4,
+          "ms": 11637.9872,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948726324
+        },
+        {
+          "round": 5,
+          "ms": 11047.051,
+          "exitCode": 0,
+          "files": 199746,
+          "bytes": 14948726324
+        }
+      ],
+      "medianMs": 11637.9872
+    }
+  ],
+  "sourceHashesLineEndings": "LF",
+  "methods": {
+    "discreveal": "Unmodified published EXE, already open, 1280x800 list view, six workers. Benchmark folder configured in app memory, no exclusions or size bounds. Fresh scans started by native Windows clicks. A lightweight DOM MutationObserver detects completion and waits for finite list/tree transitions plus two animation frames. Normal scanner, Tauri transfer and rendering, no extra scan event listener. All 62 root rows visible, no errors. App startup excluded.",
+    "robocopy": "robocopy C:\\xampp <empty destination> /L /E /BYTES /XJ /R:0 /W:0 /NFL /NDL /NJH. List only; nothing copied.",
+    "node": "node node-walk.cjs C:\\xampp. Single-threaded readdirSync with Dirent plus statSync for file sizes; no symlink traversal.",
+    "cmd": "cmd /d /c dir /a /s C:\\xampp, stdout directed to NUL.",
+    "powershell": "pwsh -NoLogo -NoProfile -NonInteractive: Get-ChildItem -LiteralPath C:\\xampp -Recurse -File -Force -ErrorAction Stop | Measure-Object -Property Length -Sum."
+  },
+  "sampleCount": 5,
+  "fileCountApproximate": true,
+  "observedFileCountRange": [
+    199746,
+    199748
+  ],
+  "scope": "Complete portable Windows application scan, including results transfer and interface rendering",
+  "appArtifact": {
+    "version": "0.2.3",
+    "sha256": "9e307fd75ecd6c5f96bee11ba81f98c6d7fe3e99d7461e4927068e54531c32a3"
+  },
+  "interface": {
+    "width": 1280,
+    "height": 800,
+    "view": "list",
+    "rootRows": 62
+  },
+  "corpusNote": "Active local folder; independent file counts vary by two files. Chart rounds to about 200000 files. Same folder for every method."
+}

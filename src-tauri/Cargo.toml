@@ -1,0 +1,60 @@
+[package]
+name = "discreveal"
+version = "0.3.15"
+description = "Disk space analyzer, duplicate finder and system cleanup for Windows"
+authors = ["markMarkinson"]
+license-file = "../LICENSE"
+edition = "2024"
+rust-version = "1.90"
+publish = false
+
+[lib]
+name = "discreveal_lib"
+crate-type = ["rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.0", features = [] }
+
+[dependencies]
+serde = { version = "1.0", features = ["derive", "rc"] }
+serde_json = "1.0"
+tauri = { version = "2.12.0", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+rand = "0.8"
+systemicons = "0.9.13"
+base64 = "0.23.1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+sha2 = "0.10"
+windows = { version = "0.61.3", features = ["Win32_System_Com", "Win32_System_Registry", "Win32_UI_LegacyWindowsEnvironmentFeatures", "Win32_UI_Shell", "Win32_UI_Shell_PropertiesSystem"] }
+windows-core = "0.61.2"
+windows-sys = { version = "0.60", features = [
+    "Win32_Foundation",
+    "Win32_Globalization",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Com",
+    "Win32_System_SystemInformation",
+    "Win32_System_IO",
+    "Win32_System_Ioctl",
+    "Win32_System_Registry",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Shell",
+] }
+rayon = "1.12.0"
+
+# Release profile tuned for binary size. The scan hot path is I/O-bound, so
+# optimising for size (`opt-level = "s"`) costs no measurable throughput.
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
+
+[dev-dependencies]
+trash = "5"

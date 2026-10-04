@@ -1,0 +1,25 @@
+.notices-main { padding-top: 60px; max-width: 960px; }
+.notices-header { margin-bottom: 48px; }
+.notices-header h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.15; letter-spacing: -.04em; margin: 24px 0 18px; }
+.notices-header p, .notices-muted { color: var(--text-2); line-height: 1.7; max-width: 700px; }
+.notices-main section { margin-bottom: 48px; }
+.notices-main h2 { font-size: 20px; letter-spacing: -.02em; }
+.notices-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.notices-count { color: var(--text-2); font-family: var(--font-mono); font-size: 12px; }
+.notices-search { display: grid; gap: 8px; color: var(--text-2); font-size: 12px; margin: 12px 0 18px; }
+.notices-search input { width: 100%; padding: 14px 16px; border: 1px solid var(--border-soft-hi); border-radius: var(--radius); background: var(--surface); color: var(--text-1); font: inherit; font-size: 14px; }
+.notices-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.notices-table-wrap { max-height: 440px; overflow: auto; border: 1px solid var(--border-soft-hi); border-radius: var(--radius); background: var(--surface); }
+.notices-table-wrap table { border-collapse: collapse; width: 100%; font-size: 12px; text-align: left; }
+.notices-table-wrap th { position: sticky; top: 0; background: var(--surface-2); color: var(--text-2); z-index: 1; }
+.notices-table-wrap td, .notices-table-wrap th { padding: 13px 16px; border-bottom: 1px solid var(--border-soft); }
+.notices-table-wrap td:first-child, .notices-table-wrap td:nth-child(2) { font-family: var(--font-mono); }
+.notices-table-wrap tr[hidden] { display: none; }
+.notices-license { margin-bottom: 10px; }
+.notices-license small { color: var(--text-3); font-size: 11px; margin-left: 8px; font-weight: 500; }
+.notices-license-body { padding: 0 24px 24px; font-size: 12px; color: var(--text-2); }
+.notices-license-body pre { font: 11px/1.8 var(--font-mono); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text-2); }
+.notices-license-body ul { padding-left: 20px; line-height: 1.8; overflow-wrap: anywhere; }
+.notices-license-body a { color: var(--text-1); }
+.notices-license-entry + .notices-license-entry { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border-soft-hi); }
+@media (max-width: 600px) { .notices-main { padding-top: 36px; } .notices-table-wrap td, .notices-table-wrap th { padding: 10px; } .notices-license-body { padding: 0 16px 16px; } }

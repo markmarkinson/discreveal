@@ -1,0 +1,59 @@
+DiscReveal Source-Available License 1.0
+Copyright (c) 2026 markMarkinson. All rights reserved except as granted below.
+Applies to publications supplied with this license, first used in October 2026.
+
+1. Scope
+This license applies to the original DiscReveal source code, executable,
+documentation and original artwork supplied by markMarkinson with this license
+(the Software). Third-party components are excluded and remain under their
+own licenses. Their notices and license texts must be preserved.
+
+2. Permitted use
+You may download and run the unmodified Software free of charge for personal
+use or internal use by a business or other organization. You may make copies
+necessary for that use and backups. You may read, download and inspect the
+source code, and build an unmodified copy for your own permitted use.
+You may share complete, unmodified official releases without charge for
+non-commercial purposes, provided this license and all required third-party
+notices accompany them and their official origin is not misrepresented.
+
+3. Restrictions
+Except where applicable mandatory law or independently obtained rights allow
+otherwise, you may not modify, adapt or create derivative works of the Software;
+publish or distribute modified versions; incorporate the Software into another
+product; or sell, sublicense, commercially distribute, or bundle the Software
+as part of a commercial product or service without prior written permission
+from markMarkinson. Internal business use permitted by section 2 is not
+commercial distribution. No trademark or endorsement rights are granted.
+
+4. Public hosting and legal rights
+Publication of source code does not grant general modification or commercial
+redistribution rights. Viewing and making unchanged forks on the official
+hosting platform as permitted by its terms are not prohibited by this license.
+Such forks do not grant additional modification or distribution rights.
+Nothing in this license restricts rights that cannot lawfully be restricted,
+including applicable statutory rights concerning interoperability, observation,
+testing, error correction or backup copies.
+
+5. Earlier GPL releases
+Earlier DiscReveal publications were licensed under GPL-3.0-or-later.
+This license does not revoke rights already granted under that license or
+restrict uses independently permitted by those earlier grants. This includes
+previously GPL-licensed code retained in later releases. This license governs
+permissions granted with this publication, not withdrawal of earlier ones.
+
+6. Warranty and liability
+To the extent permitted by applicable law, the Software is supplied as is,
+without warranties of fitness, merchantability or uninterrupted operation.
+To that extent, markMarkinson is not liable for loss or damage arising from its
+use. Mandatory consumer rights and liability that cannot lawfully be excluded
+remain unaffected.
+
+7. Other permissions
+Rights not expressly granted are reserved. Additional permission must be
+obtained in writing from markMarkinson through the official project contacts
+at https://discreveal.com or https://github.com/markmarkinson/discreveal.
+
+This is a source-available license, not an Open Source Initiative approved
+open-source license. The English text is the license; translated summaries
+are provided for convenience only.

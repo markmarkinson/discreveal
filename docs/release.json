@@ -1,0 +1,12 @@
+{
+  "version": "0.3.15",
+  "file": "discreveal-portable.exe",
+  "bytes": 5361664,
+  "sha256": "e51292adc84530e4326a7f63f13086f09b938bc58931cf0f72d1c6c24d8b2049",
+  "product": "DiscReveal",
+  "author": "markMarkinson",
+  "platform": "Windows 10/11 x64",
+  "license": "DiscReveal Source-Available License 1.0",
+  "downloadUrl": "https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe",
+  "releaseUrl": "https://github.com/markmarkinson/discreveal/releases/latest"
+}
