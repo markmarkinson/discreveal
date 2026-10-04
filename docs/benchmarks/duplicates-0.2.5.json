@@ -1,0 +1,503 @@
+{
+  "date": "2026-10-02",
+  "version": "0.2.5",
+  "scope": "Isolated DiscReveal production duplicate-search core vs Czkawka CLI. Neither graphical interface included. Not a benchmark of the complete portable app.",
+  "cpu": "Intel Core i7-6700K, 4 cores / 8 logical processors",
+  "drive": "SAMSUNG HD503HI SATA HDD",
+  "cache": "Warm Windows file cache; application caches disabled in both tools",
+  "aggregation": "One untimed warm-up and five measured runs per tool and workload, alternating tool order; median process wall time including startup and JSON result export.",
+  "discReveal": {
+    "workers": 1,
+    "algorithm": "Size, 24 KiB start/middle/end sample, adaptive complete-content fingerprint, exact byte confirmation",
+    "build": "Release opt-level=s, LTO, codegen-units=1, panic=abort; extracted production core, hardware stub matching physical test drive; no Tauri events or GUI"
+  },
+  "czkawka": {
+    "version": "12.0.2",
+    "algorithm": "HASH/BLAKE3, default thread count",
+    "arguments": "dup -d FIXTURE -m MIN_BYTES -s HASH -t BLAKE3 -H -D NONE -C RESULTS.json -N -M -W",
+    "download": "https://github.com/qarmin/czkawka/releases/download/12.0.2/windows_czkawka_cli.exe",
+    "sha256": "eb7c2009d2dd49cf5202acbd65370caece0a3f819b9515e727cedb1ec088ed1a"
+  },
+  "sourceHashes": {
+    "src-tauri/src/duplicates.rs": "771a57aa75990b04ad10109cf7aa78a937368c03dea71c64193fbbd35b7bc17d",
+    "src-tauri/src/scan.rs": "2606395e5186d064de60fca2f554ceb5b6859c502dd304c895353831731469f3",
+    "src-tauri/src/scan_directory.rs": "6f39ba39514157b86e0766a5a97c80bae08f03711836f1d310e45a8888ff6230"
+  },
+  "workloads": [
+    {
+      "name": "shared-headers",
+      "times": {
+        "discReveal": [
+          69.45640000000003,
+          86.56790000000001,
+          76.03140000000008,
+          70.82029999999986,
+          71.37879999999996
+        ],
+        "czkawka": [
+          235.61110000000002,
+          339.8941,
+          190.31909999999993,
+          193.10969999999998,
+          191.95339999999987
+        ]
+      },
+      "medians": {
+        "discReveal": 71.37879999999996,
+        "czkawka": 193.10969999999998
+      },
+      "correctness": "Both tools returned all and only the known duplicate groups",
+      "files": 512,
+      "fileBytes": 524288,
+      "groups": 64,
+      "extraCopies": 128,
+      "minimumBytes": 0,
+      "pattern": "All bytes zero except final 4 bytes containing a group number; 64 groups of three copies, 320 unique files."
+    },
+    {
+      "name": "sample-collisions",
+      "times": {
+        "discReveal": [
+          395.19849999999997,
+          442.00940000000037,
+          392.1252000000004,
+          381.6931000000004,
+          386.5565000000006
+        ],
+        "czkawka": [
+          354.40549999999985,
+          359.5555999999997,
+          353.77140000000054,
+          334.3580000000002,
+          355.15340000000015
+        ]
+      },
+      "medians": {
+        "discReveal": 392.1252000000004,
+        "czkawka": 354.40549999999985
+      },
+      "correctness": "Both tools returned all and only the known duplicate groups",
+      "files": 60,
+      "fileBytes": 8388608,
+      "groups": 20,
+      "extraCopies": 40,
+      "minimumBytes": 0,
+      "pattern": "All bytes zero except 4 bytes at offset 2097152 containing a group number; 20 groups of three copies."
+    },
+    {
+      "name": "large-identical-copies",
+      "times": {
+        "discReveal": [
+          76.51760000000013,
+          75.52149999999983,
+          78.32440000000042,
+          95.98179999999957,
+          71.61430000000018
+        ],
+        "czkawka": [
+          172.23260000000028,
+          193.44989999999962,
+          189.9920000000002,
+          237.79170000000067,
+          191.89869999999974
+        ]
+      },
+      "medians": {
+        "discReveal": 76.51760000000013,
+        "czkawka": 191.89869999999974
+      },
+      "correctness": "Both tools returned all and only the known duplicate groups",
+      "files": 12,
+      "fileBytes": 16777216,
+      "groups": 1,
+      "extraCopies": 11,
+      "minimumBytes": 10485760,
+      "pattern": "Every byte 0x41; twelve distinct physical files with identical content."
+    },
+    {
+      "name": "filtered-tree",
+      "times": {
+        "discReveal": [
+          15.414799999999559,
+          15.419200000000274,
+          15.494899999999689,
+          15.738199999999779,
+          15.762899999999718
+        ],
+        "czkawka": [
+          87.50080000000071,
+          87.1252000000004,
+          88.4372999999996,
+          87.67389999999978,
+          88.76140000000123
+        ]
+      },
+      "medians": {
+        "discReveal": 15.494899999999689,
+        "czkawka": 87.67389999999978
+      },
+      "correctness": "Both tools returned all and only the known duplicate groups",
+      "files": 6016,
+      "groups": 0,
+      "extraCopies": 0,
+      "minimumBytes": 10485760,
+      "pattern": "6000 short text files in 60 folders; 16 files of 12582912 bytes, zeros except unique group number in last 4 bytes."
+    }
+  ],
+  "previousCore": {
+    "version": "0.2.4",
+    "workers": 16,
+    "aggregation": "One warm-up, three alternating measured runs; core time excludes process startup/export.",
+    "workloads": [
+      {
+        "name": "shared-headers",
+        "medians": {
+          "baseline": 17724.3288,
+          "optimized": 60.8461
+        },
+        "runs": {
+          "baseline": [
+            {
+              "analyzeMs": 17493.4139,
+              "bytes": 268435456,
+              "candidates": 512,
+              "copies": 128,
+              "files": 512,
+              "groups": 64,
+              "totalMs": 17494.1441,
+              "walkMs": 0.7299
+            },
+            {
+              "analyzeMs": 17723.5822,
+              "bytes": 268435456,
+              "candidates": 512,
+              "copies": 128,
+              "files": 512,
+              "groups": 64,
+              "totalMs": 17724.3288,
+              "walkMs": 0.7463
+            },
+            {
+              "analyzeMs": 18042.051199999998,
+              "bytes": 268435456,
+              "candidates": 512,
+              "copies": 128,
+              "files": 512,
+              "groups": 64,
+              "totalMs": 18043.4727,
+              "walkMs": 1.4212
+            }
+          ],
+          "optimized": [
+            {
+              "analyzeMs": 59.0558,
+              "bytes": 268435456,
+              "candidates": 512,
+              "copies": 128,
+              "files": 512,
+              "groups": 64,
+              "totalMs": 59.693000000000005,
+              "walkMs": 0.6367999999999999
+            },
+            {
+              "analyzeMs": 66.2888,
+              "bytes": 268435456,
+              "candidates": 512,
+              "copies": 128,
+              "files": 512,
+              "groups": 64,
+              "totalMs": 66.9402,
+              "walkMs": 0.6511
+            },
+            {
+              "analyzeMs": 60.2122,
+              "bytes": 268435456,
+              "candidates": 512,
+              "copies": 128,
+              "files": 512,
+              "groups": 64,
+              "totalMs": 60.8461,
+              "walkMs": 0.6336
+            }
+          ]
+        }
+      },
+      {
+        "name": "sample-collisions",
+        "medians": {
+          "baseline": 736.4323,
+          "optimized": 353.383
+        },
+        "runs": {
+          "baseline": [
+            {
+              "analyzeMs": 746.4375,
+              "bytes": 503316480,
+              "candidates": 60,
+              "copies": 40,
+              "files": 60,
+              "groups": 20,
+              "totalMs": 746.7951,
+              "walkMs": 0.3572
+            },
+            {
+              "analyzeMs": 734.697,
+              "bytes": 503316480,
+              "candidates": 60,
+              "copies": 40,
+              "files": 60,
+              "groups": 20,
+              "totalMs": 734.9046999999999,
+              "walkMs": 0.2074
+            },
+            {
+              "analyzeMs": 736.2225,
+              "bytes": 503316480,
+              "candidates": 60,
+              "copies": 40,
+              "files": 60,
+              "groups": 20,
+              "totalMs": 736.4323,
+              "walkMs": 0.2094
+            }
+          ],
+          "optimized": [
+            {
+              "analyzeMs": 382.74039999999997,
+              "bytes": 503316480,
+              "candidates": 60,
+              "copies": 40,
+              "files": 60,
+              "groups": 20,
+              "totalMs": 383.1391,
+              "walkMs": 0.3983
+            },
+            {
+              "analyzeMs": 346.7106,
+              "bytes": 503316480,
+              "candidates": 60,
+              "copies": 40,
+              "files": 60,
+              "groups": 20,
+              "totalMs": 347.0641,
+              "walkMs": 0.3531
+            },
+            {
+              "analyzeMs": 353.2007,
+              "bytes": 503316480,
+              "candidates": 60,
+              "copies": 40,
+              "files": 60,
+              "groups": 20,
+              "totalMs": 353.383,
+              "walkMs": 0.182
+            }
+          ]
+        }
+      },
+      {
+        "name": "large-identical-copies",
+        "medians": {
+          "baseline": 85.9225,
+          "optimized": 60.5425
+        },
+        "runs": {
+          "baseline": [
+            {
+              "analyzeMs": 85.5971,
+              "bytes": 201326592,
+              "candidates": 12,
+              "copies": 11,
+              "files": 12,
+              "groups": 1,
+              "totalMs": 85.7349,
+              "walkMs": 0.1374
+            },
+            {
+              "analyzeMs": 86.549,
+              "bytes": 201326592,
+              "candidates": 12,
+              "copies": 11,
+              "files": 12,
+              "groups": 1,
+              "totalMs": 86.7709,
+              "walkMs": 0.2215
+            },
+            {
+              "analyzeMs": 85.7278,
+              "bytes": 201326592,
+              "candidates": 12,
+              "copies": 11,
+              "files": 12,
+              "groups": 1,
+              "totalMs": 85.9225,
+              "walkMs": 0.1942
+            }
+          ],
+          "optimized": [
+            {
+              "analyzeMs": 61.1021,
+              "bytes": 201326592,
+              "candidates": 12,
+              "copies": 11,
+              "files": 12,
+              "groups": 1,
+              "totalMs": 61.348800000000004,
+              "walkMs": 0.24630000000000002
+            },
+            {
+              "analyzeMs": 60.003,
+              "bytes": 201326592,
+              "candidates": 12,
+              "copies": 11,
+              "files": 12,
+              "groups": 1,
+              "totalMs": 60.1404,
+              "walkMs": 0.1371
+            },
+            {
+              "analyzeMs": 60.4089,
+              "bytes": 201326592,
+              "candidates": 12,
+              "copies": 11,
+              "files": 12,
+              "groups": 1,
+              "totalMs": 60.5425,
+              "walkMs": 0.1332
+            }
+          ]
+        }
+      },
+      {
+        "name": "filtered-tree",
+        "medians": {
+          "baseline": 636.1857,
+          "optimized": 6.644299999999999
+        },
+        "runs": {
+          "baseline": [
+            {
+              "analyzeMs": 624.7192,
+              "bytes": 201403992,
+              "candidates": 16,
+              "copies": 0,
+              "files": 6016,
+              "groups": 0,
+              "totalMs": 631.1591,
+              "walkMs": 6.4392
+            },
+            {
+              "analyzeMs": 646.8512,
+              "bytes": 201403992,
+              "candidates": 16,
+              "copies": 0,
+              "files": 6016,
+              "groups": 0,
+              "totalMs": 659.9382,
+              "walkMs": 13.0864
+            },
+            {
+              "analyzeMs": 629.6543,
+              "bytes": 201403992,
+              "candidates": 16,
+              "copies": 0,
+              "files": 6016,
+              "groups": 0,
+              "totalMs": 636.1857,
+              "walkMs": 6.5310999999999995
+            }
+          ],
+          "optimized": [
+            {
+              "analyzeMs": 1.8443,
+              "bytes": 201403992,
+              "candidates": 16,
+              "copies": 0,
+              "files": 6016,
+              "groups": 0,
+              "totalMs": 6.5203,
+              "walkMs": 4.6757
+            },
+            {
+              "analyzeMs": 1.9735,
+              "bytes": 201403992,
+              "candidates": 16,
+              "copies": 0,
+              "files": 6016,
+              "groups": 0,
+              "totalMs": 6.8434,
+              "walkMs": 4.8696
+            },
+            {
+              "analyzeMs": 1.8739,
+              "bytes": 201403992,
+              "candidates": 16,
+              "copies": 0,
+              "files": 6016,
+              "groups": 0,
+              "totalMs": 6.644299999999999,
+              "walkMs": 4.7701
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "realFolder": {
+    "description": "XAMPP installation on Samsung 860 EVO SATA SSD; warm OS cache, app cache off, no UI",
+    "minimumBytes": 10485760,
+    "files": 199013,
+    "candidates": 46,
+    "groups": 14,
+    "extraCopies": 16,
+    "medians": {
+      "baseline": 1993.9386,
+      "optimized": 1870.8898000000002
+    },
+    "runs": [
+      {
+        "engine": "optimized",
+        "totalMs": 2106.9407,
+        "walkMs": 1921.754,
+        "analyzeMs": 185.18589999999998
+      },
+      {
+        "engine": "baseline",
+        "totalMs": 1993.9386,
+        "walkMs": 1776.6246999999998,
+        "analyzeMs": 217.31300000000002
+      },
+      {
+        "engine": "baseline",
+        "totalMs": 1869.5132,
+        "walkMs": 1669.354,
+        "analyzeMs": 200.15849999999998
+      },
+      {
+        "engine": "optimized",
+        "totalMs": 1870.8898000000002,
+        "walkMs": 1667.4594,
+        "analyzeMs": 203.4297
+      },
+      {
+        "engine": "optimized",
+        "totalMs": 1838.1996000000001,
+        "walkMs": 1639.6348999999998,
+        "analyzeMs": 198.564
+      },
+      {
+        "engine": "baseline",
+        "totalMs": 2010.7694999999999,
+        "walkMs": 1815.9557,
+        "analyzeMs": 194.813
+      }
+    ]
+  },
+  "limitations": [
+    "Synthetic targeted workloads, not a representative collection of user documents or media.",
+    "Warm-cache measurements do not establish physical HDD seek performance or cold-cache speed.",
+    "Only Czkawka CLI compared; no claim about all competing duplicate finders.",
+    "Results vary and overlap across repeat tests; the collision case remains slower than Czkawka.",
+    "Exact expected duplicate groups and paths verified on every run; no deletion performed."
+  ]
+}

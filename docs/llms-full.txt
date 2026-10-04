@@ -1,0 +1,333 @@
+# DiscReveal – Product guide
+
+> Find large folders, duplicate files and removable caches on your hard drive or SSD. DiscReveal shows where your space goes while it scans — free, portable and ready to run.
+
+[Official website](https://discreveal.com/)
+
+## At a glance
+
+- Windows 10 or 11, 64-bit (x64).
+- Free, with publicly available source code. DiscReveal Source-Available License 1.0. Author: markMarkinson.
+- Portable executable; no DiscReveal installation. Size: 5.4 MB (5,361,664 bytes).
+- Microsoft Edge WebView2 is required. The app offers an installation link if it is missing.
+- English and German. Local hard drives, SSDs and USB drives with drive letters.
+- No supported macOS or Linux downloads; network drives are not offered in the drive picker.
+
+## Getting started
+
+1. [Download discreveal-portable.exe](https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe) and open it.
+2. Choose a drive and click “Start scan”. Folder sizes appear while scanning.
+3. Browse large folders, search for files or open the charts. Deletion is available after the scan completes or is stopped.
+4. For duplicate files, choose “Duplicates” in the top menu. A previous drive scan is not required.
+
+## Features
+
+### Live results
+
+See folder sizes while scanning and browse the results straight away. For a closer look, measure occupied file space, accounting for compression and shared files. Choose between a quick overview and a more detailed measurement.
+
+### Large files, easy to find
+
+Start with the largest folders in list view, browse file icons in grid view, or search the whole scanned drive by name. Size bars and percentages show what makes the biggest difference.
+
+### Clean up with control
+
+Choose what to remove and how. DiscReveal asks for confirmation before deletion and adds an extra warning for Windows contents and selected sensitive root and profile paths.
+
+### Duplicate finder
+
+Find identical files, even with different names, and see how much occupied space extra copies could free up. Filter the live results and choose suitable copies. One original stays; selected copies are checked again before moving to the Recycle Bin.
+
+### Understand your storage
+
+Open the chart icon next to the folder tree to see storage by file type, size and age, plus the largest individual files. Use the charts to decide where to look next.
+
+### German and English
+
+Use DiscReveal in English or German. Menus, explanations and dialogs switch immediately. The version-check page follows your language setting too.
+
+### Free up space in Windows
+
+Check temporary files, browser and app caches, Windows leftovers and the Recycle Bin. Review the broad areas, deselect what you want to keep and confirm the cleanup. System areas may require administrator rights.
+
+- **Recycle Bin:** Recoverable, same as deleting in Explorer
+- **Delete permanently:** Skips the Recycle Bin
+- **Secure delete:** Overwrites accessible file contents with random data first; refuses hard-linked files
+
+## Privacy & control
+
+- **Only within the scanned area:** File actions are checked against the folder you scanned. The scan root itself and paths outside that area are excluded.
+- **Extra care for sensitive folders:** Windows contents and selected system roots and user-profile paths require an additional acknowledgement explaining the risk. This extra protection does not apply to every subfolder.
+- **Preview without launching programs:** Opening a program, script or shortcut shows it in Explorer rather than running it.
+- **Local scanning, no account:** Scans run on your computer without telemetry or an account. The app interface blocks external requests. Checking for updates opens a page in your browser only when you click the update icon.
+- **Your data stays with you:** Scan results stay in memory. Your settings are saved locally. A cache for faster repeat duplicate searches is optional, off by default and can be cleared. The interface also uses a local WebView2 profile. Scanned files and paths are not uploaded.
+- **Public source, tested features:** The source code is public. Automated tests cover scanning, file actions, duplicate cleanup and the version-check page.
+
+## Benchmarks
+
+[Drive scan and duplicate-search comparisons](https://discreveal.com/benchmarks/)
+
+## Updates
+
+Click the update icon next to the app name in DiscReveal. A page opens in your browser, in your selected language.
+
+[How to check for updates](https://discreveal.com/guides/check-discreveal-version/)
+
+Official download SHA-256:
+
+`e51292adc84530e4326a7f63f13086f09b938bc58931cf0f72d1c6c24d8b2049`
+
+## Frequently asked questions
+
+### How does DiscReveal protect my files?
+
+DiscReveal scans locally and never removes files without confirmation. Sensitive folders need an extra acknowledgement. Download from the official website or GitHub release; each release includes a fingerprint you can use to check the program file.
+
+### Does DiscReveal clean up junk automatically, or do I decide what goes?
+
+You decide what to remove. The drive scan shows where your space goes. In the duplicate finder, “Select all suitable copies” selects personal documents and media while keeping one original per group. You review the selection before confirming cleanup; program and system files are excluded from those bulk suggestions.
+
+### What can I recover if I delete something by mistake?
+
+Depends on the mode. Recycle Bin deletions are recoverable exactly like deleting in Explorer. Permanent and secure delete are not — secure delete overwrites accessible file contents first. On SSDs, older copies in internally managed blocks may remain.
+
+### Can I exclude folders from a scan?
+
+Yes — add any folder to the exclusion list, or rely on the defaults. DiscReveal already skips the common game-library folders (Steam, Epic, GOG, Riot, EA, Ubisoft, Xbox) out of the box, since those rarely need auditing.
+
+### Can I filter the drive scan and duplicate search?
+
+Yes. The drive scan has folder exclusions and size limits. The duplicate search has its own minimum and maximum file size, plus included or excluded file types. Its results can also be filtered live by name or path, size, extension and whether identical files share a name.
+
+### Can I scan a USB or external drive?
+
+Yes, any local drive with a letter, USB included. The scanner adapts its thread count to the drive type — fewer parallel reads on USB and spinning disks, more on NVMe/SSD — so it stays fast without overloading the drive.
+
+### How is this different from checking a folder’s properties in Explorer?
+
+Folder properties in Explorer measure the folder you chose. DiscReveal gives you an overview of the drive, with folder sizes, a searchable folder tree, charts and a separate duplicate finder.
+
+### Is DiscReveal really free?
+
+Yes — no cost, no ads, no telemetry, no account. The official app is free for personal and internal business use. Its source code is publicly available to inspect. Modifications and commercial redistribution require permission; see the license.
+
+### Is DiscReveal portable?
+
+Yes. Download the executable and run it without installing DiscReveal. You can launch it from a USB stick too. Keep discreveal_data with the app to take your preferences along. WebView2 is required; there is no DiscReveal background service.
+
+### Does duplicate cleanup keep an original?
+
+Yes. One original stays in each duplicate group. Cleanup checks selected copies against that original again before moving them to the Recycle Bin. Changed or missing files and hard links are skipped. Potential savings use measured occupied space; unavailable measurements are identified and left out of the total. Space becomes free after emptying the Recycle Bin.
+
+### Why does the duplicate search skip files under 10 MB?
+
+The default focuses on larger files, where removing a copy usually frees more space. Turn off “Exclude small files” to scan all sizes, or choose your own limit. The scan still needs to visit folders; the time saved depends on your files.
+
+### Does DiscReveal save or upload scan results?
+
+Scan results stay in memory and are not uploaded. Settings are saved locally. The duplicate-search cache is off by default, requires your consent and can be cleared. WebView2 keeps a local interface profile. The update link includes only the app version, language and program fingerprint when available.
+
+### What does system cleanup include?
+
+Choose Cleanup → Check everything. DiscReveal checks supported temporary files, browser, app, package and graphics caches, error reports, Windows system leftovers and the Recycle Bin. Results are preselected in broad areas; deselect anything you want to keep, then confirm one cleanup operation. Running apps and protected or recent files are skipped. Windows handles its system leftovers; protected areas need administrator rights. Previous Windows versions and the Recycle Bin are separate areas you can deselect. Their removal is permanent and may remove recovery or rollback options. Caches are rebuilt when needed. Nothing is deleted before you confirm.
+
+### Why can file size differ from occupied disk space?
+
+File size describes how much data a file contains. Occupied space can differ because of compression, reserved blocks or several names pointing to the same file. For a quick overview, DiscReveal shows file sizes. Enable “Measure occupied space” under Scan → Filter for a more detailed measurement. It takes longer and counts shared files once. Filesystem metadata, snapshots and backups are outside this measurement.
+
+### What does an incomplete scan mean?
+
+It means some data could not be fully examined, for example because you stopped the scan, access was denied or a file changed. The results you can see are still useful, but they do not cover everything. Check the notice and scan again when needed. An unavailable measurement is identified rather than presented as zero occupied space.
+
+## Official links
+
+- [Windows download](https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe)
+- [Latest release](https://github.com/markmarkinson/discreveal/releases/latest)
+- [Public source code](https://github.com/markmarkinson/discreveal)
+- [DiscReveal Source-Available License 1.0](https://github.com/markmarkinson/discreveal/blob/main/LICENSE)
+- [Third-party notices](https://discreveal.com/third-party-notices/)
+
+## Knowledge & guides
+
+[All articles](https://discreveal.com/guides/)
+
+- [What is taking up space on my Windows drive?](https://discreveal.com/guides/what-is-taking-up-disk-space/)
+- [Remove duplicate files while keeping an original](https://discreveal.com/guides/remove-duplicate-files/)
+- [What is Prefetch, and should you delete the folder?](https://discreveal.com/guides/what-is-prefetch/)
+- [What is AppData, and what can you delete there?](https://discreveal.com/guides/what-is-appdata/)
+- [What is a cache, and when should you clear it?](https://discreveal.com/guides/what-is-a-cache/)
+- [What is a file hash, and what does it tell you about safety?](https://discreveal.com/guides/check-file-hash/)
+- [How do we find duplicate files with different names?](https://discreveal.com/guides/how-we-find-duplicates/)
+- [Secure deletion: what works on HDDs and SSDs?](https://discreveal.com/guides/secure-deletion-hdd-ssd/)
+- [Files in the Recycle Bin: deleted or still there?](https://discreveal.com/guides/recycle-bin-files-really-deleted/)
+- [DiscReveal: Check your version with one click](https://discreveal.com/guides/check-discreveal-version/)
+- [Size vs size on disk: Understand the difference](https://discreveal.com/guides/size-vs-size-on-disk/)
+- [Windows cleanup: Free up disk space with control](https://discreveal.com/guides/windows-cleanup-free-disk-space/)
+
+---
+
+# DiscReveal – Produktinformationen
+
+> Finde große Ordner, doppelte Dateien und entbehrliche Zwischenspeicher auf deiner Festplatte oder SSD. DiscReveal zeigt schon beim Scannen, wo dein Speicherplatz bleibt – kostenlos und ohne Installation.
+
+[Offizielle Website](https://discreveal.com/de/)
+
+## Auf einen Blick
+
+- Windows 10 oder 11, 64-Bit (x64).
+- Kostenlos, Quellcode öffentlich einsehbar. DiscReveal Source-Available License 1.0. Autor: markMarkinson.
+- Portable EXE ohne DiscReveal-Installation. Größe: 5,4 MB (5.361.664 Bytes).
+- Microsoft Edge WebView2 muss vorhanden sein. Die App bietet bei Bedarf einen Installationslink.
+- Deutsch und Englisch. Lokale Festplatten, SSDs und USB-Laufwerke mit Laufwerksbuchstaben.
+- Keine unterstützten macOS- oder Linux-Downloads; Netzlaufwerke werden nicht zur Auswahl angeboten.
+
+## Erste Schritte
+
+1. [discreveal-portable.exe herunterladen](https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe) und öffnen.
+2. Ein Laufwerk auswählen und „Scan starten“ anklicken. Ordnergrößen erscheinen während des Scans.
+3. Große Ordner durchsehen, Dateien suchen oder die Diagramme öffnen. Löschen ist nach Ende oder Abbruch des Scans möglich.
+4. Für doppelte Dateien „Duplikate“ im oberen Menü wählen. Ein vorheriger Laufwerksscan ist nicht nötig.
+
+## Funktionen
+
+### Live-Ergebnisse
+
+Sieh Ordnergrößen schon während des Scans und öffne die Ergebnisse direkt. Für einen genaueren Blick misst DiscReveal den belegten Dateispeicher und berücksichtigt Komprimierung und gemeinsam genutzte Dateien. Du wählst zwischen schnellem Überblick und genauerer Messung.
+
+### Große Dateien schnell finden
+
+Beginne mit den größten Ordnern in der Liste, stöbere in der Symbolansicht oder suche im gesamten gescannten Laufwerk nach einem Namen. Größenbalken und Prozentwerte zeigen, wo sich das Aufräumen am meisten lohnt.
+
+### Aufräumen mit Kontrolle
+
+Du wählst aus, was entfernt wird und wie. DiscReveal fragt vor dem Löschen nach und weist bei Windows-Inhalten und ausgewählten sensiblen Wurzel- und Profilpfaden zusätzlich auf das Risiko hin.
+
+### Duplikate finden
+
+Finde identische Dateien auch mit anderem Namen und sieh, wie viel belegten Speicher überzählige Kopien freigeben könnten. Filtere die laufenden Ergebnisse und wähle geeignete Kopien aus. Ein Original bleibt; vor dem Verschieben in den Papierkorb werden die Kopien erneut geprüft.
+
+### Deinen Speicher besser verstehen
+
+Das Diagrammsymbol neben dem Ordnerbaum zeigt die Belegung nach Dateityp, Größe und Alter sowie die größten einzelnen Dateien. So siehst du, wo sich ein genauerer Blick lohnt.
+
+### Deutsch und Englisch
+
+Nutze DiscReveal auf Deutsch oder Englisch. Menüs, Erklärungen und Dialoge wechseln sofort. Auch die Seite zur Versionsprüfung übernimmt deine Spracheinstellung.
+
+### Windows aufräumen
+
+Prüfe temporäre Dateien, Browser- und App-Zwischenspeicher, Windows-Reste und den Papierkorb. Sieh dir die Bereiche an, wähle ab, was bleiben soll, und bestätige die Bereinigung. Für Systembereiche können Administratorrechte nötig sein.
+
+- **Papierkorb:** Wiederherstellbar, genau wie im Explorer
+- **Endgültig löschen:** Überspringt den Papierkorb
+- **Sicher löschen:** Überschreibt zugängliche Dateiinhalte zuerst mit Zufallsdaten; verweigert sich bei Hardlinks
+
+## Datenschutz & Kontrolle
+
+- **Nur im gescannten Bereich:** Dateiaktionen werden gegen den gescannten Ordner geprüft. Der Ausgangsordner selbst und Pfade außerhalb dieses Bereichs sind ausgeschlossen.
+- **Zusätzlicher Schutz für sensible Ordner:** Für Windows-Inhalte sowie ausgewählte Systemwurzeln und Benutzerprofilpfade ist eine zusätzliche Bestätigung mit Risikoerklärung nötig. Dieser zusätzliche Schutz gilt nicht für jeden Unterordner.
+- **Programme bleiben geschlossen:** Programme, Skripte und Verknüpfungen werden im Explorer angezeigt, statt ausgeführt zu werden.
+- **Lokal scannen, ohne Konto:** Scans laufen auf deinem Computer, ohne Telemetrie und ohne Konto. Die App-Oberfläche blockiert externe Anfragen. Nur wenn du auf das Update-Symbol klickst, öffnet sich die Prüfung in deinem Browser.
+- **Deine Daten bleiben bei dir:** Scanergebnisse bleiben im Arbeitsspeicher. Deine Einstellungen werden lokal gespeichert. Der Zwischenspeicher für schnellere Duplikatsuchen ist freiwillig, standardmäßig aus und jederzeit löschbar. Die Oberfläche nutzt außerdem ein lokales WebView2-Profil. Gescannte Dateien und Pfade werden nicht hochgeladen.
+- **Quellcode einsehbar, Funktionen geprüft:** Der Quellcode ist öffentlich. Automatische Tests prüfen Scans, Dateiaktionen, die Duplikatbereinigung und die Versionsprüfung.
+
+## Benchmarks
+
+[Vergleichstests für Laufwerksscan und Duplikatsuche](https://discreveal.com/de/benchmarks/)
+
+## Updates
+
+Klicke in DiscReveal auf das Update-Symbol neben dem Appnamen. Die Prüfung öffnet sich in deinem Browser, passend zu deiner Spracheinstellung.
+
+[So prüfst du deine Version](https://discreveal.com/de/ratgeber/discreveal-version-pruefen/)
+
+SHA-256 des offiziellen Downloads:
+
+`e51292adc84530e4326a7f63f13086f09b938bc58931cf0f72d1c6c24d8b2049`
+
+## Häufig gestellte Fragen
+
+### Wie schützt DiscReveal meine Dateien?
+
+DiscReveal scannt lokal und entfernt keine Dateien ohne Bestätigung. Bei sensiblen Ordnern ist eine zusätzliche Zustimmung nötig. Lade die App von der offiziellen Website oder dem GitHub-Release herunter; jedes Release nennt einen Fingerabdruck zum Prüfen der Programmdatei.
+
+### Räumt DiscReveal automatisch auf, oder entscheide ich, was gelöscht wird?
+
+Du entscheidest, was entfernt wird. Der Laufwerksscan zeigt dir, wo dein Speicherplatz bleibt. In der Duplikatsuche markiert „Alles Geeignete markieren“ persönliche Dokumente und Medien, wobei pro Gruppe ein Original erhalten bleibt. Du prüfst die Auswahl und bestätigst die Bereinigung; Programm- und Systemdateien sind von diesen Sammelvorschlägen ausgeschlossen.
+
+### Was kann ich wiederherstellen, wenn ich versehentlich etwas lösche?
+
+Hängt vom Modus ab. Papierkorb-Löschungen sind wiederherstellbar, genau wie im Explorer. Endgültig und sicher löschen sind es nicht — sicher löschen überschreibt die zugänglichen Dateiinhalte zuerst. Bei SSDs können ältere Kopien in intern verwalteten Speicherblöcken verbleiben.
+
+### Kann ich Ordner vom Scan ausschließen?
+
+Ja — füge beliebige Ordner zur Ausschlussliste hinzu, oder verlass dich auf die Standardwerte. DiscReveal überspringt von Haus aus die üblichen Spiele-Bibliotheksordner (Steam, Epic, GOG, Riot, EA, Ubisoft, Xbox), die selten geprüft werden müssen.
+
+### Kann ich den Laufwerksscan und die Duplikatsuche filtern?
+
+Ja. Der Laufwerksscan bietet Ordnerausschlüsse und Größengrenzen. Die Duplikatsuche hat eigene Mindest- und Höchstgrößen sowie ein- oder ausgeschlossene Dateitypen. Treffer kannst du zusätzlich live nach Name oder Pfad, Größe, Dateiendung und gleichen oder unterschiedlichen Dateinamen filtern.
+
+### Kann ich ein USB- oder externes Laufwerk scannen?
+
+Ja, jedes lokale Laufwerk mit Laufwerksbuchstaben — auch USB. Der Scanner passt die Anzahl paralleler Threads an den Laufwerkstyp an (weniger auf USB und rotierenden Platten, mehr auf NVMe/SSD), damit er schnell bleibt, ohne das Laufwerk zu überlasten.
+
+### Was ist der Unterschied zur Größenanzeige im Explorer?
+
+Die Ordnereigenschaften im Explorer messen den ausgewählten Ordner. DiscReveal zeigt dir das Laufwerk im Überblick – mit Ordnergrößen, durchsuchbarem Ordnerbaum, Diagrammen und einer eigenen Duplikatsuche.
+
+### Ist DiscReveal wirklich kostenlos?
+
+Ja — kostenlos, ohne Werbung, Telemetrie oder Konto. Die offizielle App darfst du privat und intern im Unternehmen kostenlos nutzen. Der Quellcode ist öffentlich einsehbar. Änderungen und kommerzieller Weitervertrieb benötigen eine Erlaubnis; die Einzelheiten stehen in der Lizenz.
+
+### Ist DiscReveal portabel?
+
+Ja. Lade die EXE herunter und starte sie, ohne DiscReveal zu installieren. Das geht auch vom USB-Stick. Nimm discreveal_data mit, wenn du deine Einstellungen behalten möchtest. WebView2 muss vorhanden sein; DiscReveal richtet keinen Hintergrunddienst ein.
+
+### Bleibt beim Bereinigen von Duplikaten ein Original erhalten?
+
+Ja. In jeder Duplikatgruppe bleibt ein Original erhalten. Vor dem Verschieben in den Papierkorb werden die ausgewählten Kopien erneut mit diesem Original verglichen. Geänderte oder fehlende Dateien und Hardlinks werden übersprungen. Die mögliche Ersparnis basiert auf gemessenem belegtem Speicher; fehlende Messungen werden kenntlich gemacht und nicht addiert. Speicherplatz wird nach dem Leeren des Papierkorbs frei.
+
+### Warum überspringt die Duplikatsuche Dateien unter 10 MB?
+
+Die Vorgabe konzentriert sich auf größere Dateien, bei denen eine entfernte Kopie meist mehr Platz freigibt. Schalte „Kleine Dateien ausschließen“ ab, um alle Größen einzubeziehen, oder wähle eine eigene Grenze. Ordner müssen weiterhin durchsucht werden; die Zeitersparnis hängt von deinen Dateien ab.
+
+### Speichert oder überträgt DiscReveal meine Scanergebnisse?
+
+Scanergebnisse bleiben im Arbeitsspeicher und werden nicht hochgeladen. Einstellungen werden lokal gespeichert. Der Zwischenspeicher für Duplikatsuchen ist standardmäßig aus, braucht deine Zustimmung und lässt sich leeren. WebView2 speichert ein lokales Oberflächenprofil. Der Update-Link enthält nur App-Version, Sprache und, falls verfügbar, den Fingerabdruck der Programmdatei.
+
+### Was kann die Systembereinigung entfernen?
+
+Wähle Bereinigen → Alles prüfen. DiscReveal prüft unterstützte temporäre Dateien, Browser-, App-, Paket- und Grafik-Caches, Fehlerberichte, Windows-Systemreste und den Papierkorb. Die Ergebnisse sind in groben Bereichen vorausgewählt. Wähle ab, was du behalten möchtest, und bestätige eine gemeinsame Bereinigung. Laufende Apps sowie geschützte und zu junge Dateien werden ausgelassen. Windows bereinigt seine Systemreste selbst; geschützte Bereiche benötigen Administratorrechte. Frühere Windows-Versionen und Papierkorb sind eigene abwählbare Bereiche. Ihre Entfernung ist endgültig und kann Wiederherstellungs- oder Rückkehrmöglichkeiten entfernen. Caches werden bei Bedarf neu aufgebaut. Vor deiner Bestätigung wird nichts gelöscht.
+
+### Warum unterscheiden sich Dateigröße und belegter Speicher?
+
+Die Dateigröße beschreibt, wie viele Daten eine Datei enthält. Der belegte Speicher kann etwa durch Komprimierung, reservierte Blöcke oder mehrere Namen derselben Datei abweichen. Für den schnellen Überblick zeigt DiscReveal Dateigrößen. Aktiviere unter Scan → Filter „Belegten Speicher messen“ für eine genauere Messung. Sie dauert länger und zählt gemeinsam genutzte Dateien nur einmal. Dateisystem-Metadaten, Snapshots und Backups sind nicht enthalten.
+
+### Was bedeutet ein unvollständiger Scan?
+
+Ein Teil der Daten konnte nicht vollständig geprüft werden, etwa weil du den Scan gestoppt hast, Zugriffsrechte fehlen oder eine Datei sich verändert hat. Die sichtbaren Ergebnisse helfen dir weiterhin, decken aber nicht alles ab. Beachte den Hinweis und scanne bei Bedarf erneut. Eine fehlende Messung wird kenntlich gemacht und nicht als null belegter Speicher ausgegeben.
+
+## Offizielle Links
+
+- [Windows-Download](https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe)
+- [Aktuelles Release](https://github.com/markmarkinson/discreveal/releases/latest)
+- [Öffentlicher Quellcode](https://github.com/markmarkinson/discreveal)
+- [DiscReveal Source-Available License 1.0](https://github.com/markmarkinson/discreveal/blob/main/LICENSE)
+- [Drittanbieter & Lizenzen](https://discreveal.com/de/third-party-notices/)
+
+## Wissen & Ratgeber
+
+[Alle Artikel](https://discreveal.com/de/ratgeber/)
+
+- [Was belegt meine Festplatte unter Windows?](https://discreveal.com/de/ratgeber/was-belegt-meine-festplatte/)
+- [Doppelte Dateien entfernen – ein Original behalten](https://discreveal.com/de/ratgeber/doppelte-dateien-entfernen/)
+- [Was ist Prefetch – und sollte man den Ordner löschen?](https://discreveal.com/de/ratgeber/was-ist-prefetch/)
+- [Was ist AppData – und was darf man dort löschen?](https://discreveal.com/de/ratgeber/was-ist-appdata/)
+- [Was ist ein Cache – und wann lohnt sich das Leeren?](https://discreveal.com/de/ratgeber/was-ist-ein-cache/)
+- [Was ist ein Datei-Hashwert – und was sagt er über Sicherheit?](https://discreveal.com/de/ratgeber/datei-hashwert-pruefen/)
+- [Wie finden wir doppelte Dateien – auch mit anderem Namen?](https://discreveal.com/de/ratgeber/wie-finden-wir-duplikate/)
+- [Sicheres Löschen: Was funktioniert auf HDD und SSD?](https://discreveal.com/de/ratgeber/sicheres-loeschen-hdd-ssd/)
+- [Dateien im Papierkorb: gelöscht oder noch da?](https://discreveal.com/de/ratgeber/papierkorb-dateien-wirklich-geloescht/)
+- [DiscReveal: Deine Version mit einem Klick prüfen](https://discreveal.com/de/ratgeber/discreveal-version-pruefen/)
+- [Größe vs. Größe auf Datenträger: den Unterschied verstehen](https://discreveal.com/de/ratgeber/groesse-und-groesse-auf-datentraeger/)
+- [Windows bereinigen: Speicherplatz gezielt freigeben](https://discreveal.com/de/ratgeber/windows-bereinigen-speicherplatz-freigeben/)

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+discreveal_settings.ini
+discreveal_settings.ini.tmp
+discreveal_data/
+*.log
+.claude/
+
+# Internal working notes (handoff doc, local-only material) — never pushed.
+.internal/

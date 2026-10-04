@@ -1,0 +1,72 @@
+# DiscReveal
+
+> Free, portable disk space analyzer, duplicate finder and system cleanup tool for Windows 10/11 x64. Shows folder sizes during scanning and retains an original when cleaning up duplicate copies. Available in English and German.
+
+Official product by markMarkinson. Current portable download: 5361664 bytes. License: DiscReveal Source-Available License 1.0. Requires Microsoft Edge WebView2. Scans locally without an account or telemetry. Optional duplicate-search cache is off by default; local settings and a WebView2 profile are saved. The app is built with Rust, Tauri and JavaScript and currently ships for Windows only.
+
+The published benchmarks describe the tested builds and conditions; they are not measurements of every later build. Test conditions, raw data and the limits of the comparison are documented below.
+
+## Product documentation
+
+- [English product guide](https://discreveal.com/index.md): Features, requirements, duplicate cleanup, privacy, benchmark methodology and update checks.
+- [Deutsche Produktinformationen](https://discreveal.com/de/index.md): Funktionen, Voraussetzungen, Duplikatbereinigung, Datenschutz, Messwerte und Versionsprüfung.
+- [Current release facts](https://discreveal.com/release.json): Version, exact executable size, SHA-256 and official download link.
+
+## Official website and downloads
+
+- [English website](https://discreveal.com/): Live demo, screenshots, features and download.
+- [Deutsche Website](https://discreveal.com/de/): Vorschau, Screenshots, Funktionen und Download.
+- [Windows executable](https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe): Official portable discreveal-portable.exe.
+- [Latest GitHub release](https://github.com/markmarkinson/discreveal/releases/latest): Current release notes, executable and license download.
+- [Public source code](https://github.com/markmarkinson/discreveal): Source, English and German README, license and build instructions.
+
+## Knowledge & guides
+
+- [English knowledge hub](https://discreveal.com/guides/): All articles organized by topic.
+- [DiscReveal guides and comparisons](https://discreveal.com/guides/discreveal/): Articles tagged DiscReveal.
+- [Deutscher Wissensbereich](https://discreveal.com/de/ratgeber/): Alle Artikel nach Themen.
+- [Wissen zu DiscReveal](https://discreveal.com/de/ratgeber/discreveal/): Artikel mit dem Tag DiscReveal.
+
+- [What is taking up space on my Windows drive?](https://discreveal.com/guides/what-is-taking-up-disk-space/index.md): Find large folders and files on Windows with DiscReveal. Follow the space usage from your drive down to the files you no longer need.
+- [Was belegt meine Festplatte unter Windows?](https://discreveal.com/de/ratgeber/was-belegt-meine-festplatte/index.md): Finde große Ordner und Dateien unter Windows mit DiscReveal. Sieh Schritt für Schritt, was Platz belegt und welche eigenen Dateien du prüfen solltest.
+- [Remove duplicate files while keeping an original](https://discreveal.com/guides/remove-duplicate-files/index.md): Find duplicate files with DiscReveal, review identical copies and keep an original. Learn how filters and Recycle Bin cleanup work on Windows.
+- [Doppelte Dateien entfernen – ein Original behalten](https://discreveal.com/de/ratgeber/doppelte-dateien-entfernen/index.md): Finde doppelte Dateien mit DiscReveal, prüfe identische Kopien und behalte ein Original. So funktionieren Filter und Bereinigung über den Papierkorb.
+- [What is Prefetch, and should you delete the folder?](https://discreveal.com/guides/what-is-prefetch/index.md): Learn what Windows keeps in Prefetch, how it helps startup and why routinely clearing the folder is not a useful cleanup strategy.
+- [Was ist Prefetch – und sollte man den Ordner löschen?](https://discreveal.com/de/ratgeber/was-ist-prefetch/index.md): Was Windows in Prefetch speichert, warum die Dateien beim Starten helfen und weshalb regelmäßiges Leeren kein sinnvoller Aufräumplan ist.
+- [What is AppData, and what can you delete there?](https://discreveal.com/guides/what-is-appdata/index.md): Understand AppData, Local, Roaming and LocalLow. Learn why application data grows and how to review it before cleaning up.
+- [Was ist AppData – und was darf man dort löschen?](https://discreveal.com/de/ratgeber/was-ist-appdata/index.md): AppData, Local, Roaming und LocalLow einfach erklärt. Finde heraus, warum der Ordner wächst und wie du Anwendungsdaten bewusst aufräumst.
+- [What is a cache, and when should you clear it?](https://discreveal.com/guides/what-is-a-cache/index.md): A cache saves repeated work. Learn what lives in memory or on disk, when clearing it helps and which application data is not a cache.
+- [Was ist ein Cache – und wann lohnt sich das Leeren?](https://discreveal.com/de/ratgeber/was-ist-ein-cache/index.md): Ein Cache spart wiederholte Arbeit. Erfahre, was im RAM oder auf der Festplatte liegt, wann Leeren hilft und was kein Cache ist.
+- [What is a file hash, and what does it tell you about safety?](https://discreveal.com/guides/check-file-hash/index.md): Understand SHA-256, check a download, spot changes and learn what a checksum cannot prove. Includes a read-only PowerShell example.
+- [Was ist ein Datei-Hashwert – und was sagt er über Sicherheit?](https://discreveal.com/de/ratgeber/datei-hashwert-pruefen/index.md): SHA-256 verständlich erklärt: Downloads prüfen, Änderungen erkennen und die Grenzen einer Prüfsumme verstehen. Mit PowerShell-Beispiel.
+- [How do we find duplicate files with different names?](https://discreveal.com/guides/how-we-find-duplicates/index.md): How DiscReveal identifies matching content using size, small samples and a full comparison. Why names are not enough and one original stays.
+- [Wie finden wir doppelte Dateien – auch mit anderem Namen?](https://discreveal.com/de/ratgeber/wie-finden-wir-duplikate/index.md): So erkennt DiscReveal identische Inhalte: Größe, kleine Stichproben und vollständiger Vergleich. Warum Name allein nicht reicht und ein Original bleibt.
+- [Secure deletion: what works on HDDs and SSDs?](https://discreveal.com/guides/secure-deletion-hdd-ssd/index.md): Deleting, overwriting and sanitizing a drive are different. Understand SSD limitations and what DiscReveal’s secure-delete mode does.
+- [Sicheres Löschen: Was funktioniert auf HDD und SSD?](https://discreveal.com/de/ratgeber/sicheres-loeschen-hdd-ssd/index.md): Löschen, Überschreiben und Laufwerksbereinigung unterscheiden sich. Verstehe die Grenzen auf SSDs und was DiscReveal beim sicheren Löschen tut.
+- [Files in the Recycle Bin: deleted or still there?](https://discreveal.com/guides/recycle-bin-files-really-deleted/index.md): The Windows Recycle Bin helps with accidental deletion but does not protect confidential contents. Learn when space is freed and what emptying means.
+- [Dateien im Papierkorb: gelöscht oder noch da?](https://discreveal.com/de/ratgeber/papierkorb-dateien-wirklich-geloescht/index.md): Der Windows-Papierkorb hilft gegen versehentliches Löschen, schützt aber keine vertraulichen Daten. Erfahre, wann Platz frei wird und was Leeren bedeutet.
+- [DiscReveal: Check your version with one click](https://discreveal.com/guides/check-discreveal-version/index.md): Check for a DiscReveal update and see whether your app matches the official download. A simple, step-by-step guide.
+- [DiscReveal: Deine Version mit einem Klick prüfen](https://discreveal.com/de/ratgeber/discreveal-version-pruefen/index.md): So prüfst du direkt aus DiscReveal, ob ein Update verfügbar ist und deine App zum offiziellen Download passt. Einfach erklärt, Schritt für Schritt.
+- [Size vs size on disk: Understand the difference](https://discreveal.com/guides/size-vs-size-on-disk/index.md): Understand file size and occupied space: compression, sparse files and hard links. Choose the right storage measurement in DiscReveal.
+- [Größe vs. Größe auf Datenträger: den Unterschied verstehen](https://discreveal.com/de/ratgeber/groesse-und-groesse-auf-datentraeger/index.md): Dateigröße und belegter Speicher einfach erklärt: Komprimierung, Sparse-Dateien und Hardlinks. So wählst du die passende Messung in DiscReveal.
+- [Windows cleanup: Free up disk space with control](https://discreveal.com/guides/windows-cleanup-free-disk-space/index.md): Review temporary files, browser caches and Windows leftovers. Use DiscReveal to check cleanup areas and decide what you want to keep.
+- [Windows bereinigen: Speicherplatz gezielt freigeben](https://discreveal.com/de/ratgeber/windows-bereinigen-speicherplatz-freigeben/index.md): Temporäre Dateien, Browser-Caches und Windows-Reste gezielt aufräumen. So prüfst du die Bereiche in DiscReveal und entscheidest, was bleiben soll.
+- [Drive scans: DiscReveal compared](https://discreveal.com/benchmarks/drive-scan/index.md): DiscReveal, robocopy, PowerShell and other methods on the same folder. Times including the finished app interface, test setup and raw data.
+- [Laufwerksscan: DiscReveal im Vergleich](https://discreveal.com/de/benchmarks/laufwerksscan/index.md): DiscReveal, robocopy, PowerShell und weitere Methoden im selben Ordner. Zeiten inklusive fertiger App-Oberfläche, Testaufbau und Rohdaten.
+- [Duplicate search: DiscReveal and Czkawka compared](https://discreveal.com/benchmarks/duplicate-search/index.md): Four targeted comparisons using identical files. Search times, correct matches and the limits of measurements without the interface.
+- [Duplikatsuche: DiscReveal und Czkawka im Vergleich](https://discreveal.com/de/benchmarks/duplikatsuche/index.md): Vier gezielte Vergleichstests mit identischen Dateien. Suchzeiten, richtige Treffer und Grenzen der Messung ohne Oberfläche.
+
+## Evidence and licensing
+
+- [English benchmark report](https://discreveal.com/benchmarks/): Full drive scan and duplicate-search comparisons.
+- [Deutsche Vergleichstests](https://discreveal.com/de/benchmarks/): Ergebnisse und Testaufbau.
+- [Duplicate-search core comparison](https://discreveal.com/benchmarks/duplicates-0.2.5.json): DiscReveal core vs Czkawka 12.0.2 CLI, five warm-cache runs, app caches off, no graphical interfaces. Targeted synthetic workloads; both return the exact expected groups.
+
+- [Complete-app benchmark data](https://discreveal.com/benchmarks/scan-0.2.3.json): Five runs per method on the same folder; the measured build, warm Windows file cache, interface rendering included. Command comparisons, not comparisons against other graphical disk analyzers.
+- [DiscReveal Source-Available License 1.0 license](https://github.com/markmarkinson/discreveal/blob/main/LICENSE): Product license.
+- [Third-party notices](https://discreveal.com/third-party-notices/): Included components and original license texts.
+
+## Optional
+
+- [Combined English and German reference](https://discreveal.com/llms-full.txt): Both product guides in one file.
+- [Deutsche Lizenzhinweise](https://discreveal.com/de/third-party-notices/): Verwendete Komponenten und Lizenztexte.

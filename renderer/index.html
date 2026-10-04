@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-disc-reveal="discReveal" data-mark-markinson="markMarkinson">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="generator" content="discReveal by markMarkinson" />
+    <meta name="author" content="markMarkinson" />
+    <title>DiscReveal</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="i18n-pending">
+    <div class="app-shell">
+        <header class="topbar" data-tauri-drag-region="deep">
+            <div class="topbar-drag">
+                <div class="brand">
+                    <img class="brand-icon" src="icon.svg" alt="" width="28" height="28" draggable="false" />
+                    <span class="brand-name">DiscReveal</span>
+                    <span class="brand-version" id="app-version" hidden></span>
+                    <button type="button" id="btn-check-updates" class="brand-update-btn" data-tauri-drag-region="false" data-i18n-title="checkForUpdatesTitle" data-i18n-aria="checkForUpdatesTitle">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="feature-nav" aria-label="DiscReveal">
+                <button type="button" id="nav-scan" class="feature-tab is-active" aria-pressed="true" data-i18n="navScan" data-tauri-drag-region="false"></button>
+                <button type="button" id="nav-duplicates" class="feature-tab" aria-pressed="false" data-i18n="navDuplicates" data-tauri-drag-region="false"></button>
+                <button type="button" id="nav-cleanup" class="feature-tab" aria-pressed="false" data-i18n="navCleanup" data-tauri-drag-region="false"></button>
+            </nav>
+
+            <div class="window-controls">
+                <button type="button" id="btn-language" class="window-btn language-btn"></button>
+                <button type="button" id="btn-min" class="window-btn" data-i18n-title="minimize" data-i18n-aria="minimize">─</button>
+                <button type="button" id="btn-max" class="window-btn" data-i18n-title="maximize" data-i18n-aria="maximize">▢</button>
+                <button type="button" id="btn-close" class="window-btn window-btn-close" data-i18n-title="close" data-i18n-aria="close">✕</button>
+            </div>
+        </header>
+
+        <section class="feature-controls" aria-label="Filters" data-i18n-aria="featureControls">
+            <div class="feature-toolbar" id="scan-controls">
+                <select id="drive-select" class="pill-select" data-i18n-aria="driveLabel"></select>
+
+                <div class="nav-more" id="exclude-dropdown">
+                    <button type="button" id="btn-exclude-toggle" class="pill-btn pill-btn-ghost" aria-haspopup="true" aria-expanded="false">
+                        <span data-i18n="excludes"></span> <i class="chevron"></i>
+                    </button>
+                    <div class="nav-more-menu" data-tauri-drag-region="false" id="exclude-menu">
+                        <div class="nav-more-title" data-i18n="excludedFolders"></div>
+                        <ul id="exclude-list" class="exclude-list"></ul>
+                        <button type="button" id="btn-add-exclude-folder" class="pill-btn pill-btn-ghost btn-small" data-i18n="chooseFolder"></button>
+                    </div>
+                </div>
+
+                <div class="nav-more" id="filter-dropdown">
+                    <button type="button" id="btn-filter-toggle" class="pill-btn pill-btn-ghost" aria-haspopup="true" aria-expanded="false">
+                        <span data-i18n="filter"></span> <i class="chevron"></i>
+                    </button>
+                    <div class="nav-more-menu" data-tauri-drag-region="false" id="filter-menu">
+                        <div class="nav-more-title" data-i18n="filterTitle"></div>
+                        <label class="filter-field">
+                            <span data-i18n="minFolderSize"></span>
+                            <div class="filter-input-row">
+                                <input type="number" id="min-folder-size" min="0" step="any" placeholder="0" />
+                                <select id="min-folder-size-unit" class="filter-unit-select">
+                                    <option value="MB">MB</option>
+                                    <option value="GB">GB</option>
+                                </select>
+                            </div>
+                        </label>
+                        <label class="filter-field">
+                            <span data-i18n="maxFolderSize"></span>
+                            <div class="filter-input-row">
+                                <input type="number" id="max-folder-size" min="0" step="any" placeholder="0" />
+                                <select id="max-folder-size-unit" class="filter-unit-select">
+                                    <option value="MB">MB</option>
+                                    <option value="GB">GB</option>
+                                </select>
+                            </div>
+                        </label>
+                        <div class="filter-hint" data-i18n="filterHint"></div>
+                        <div class="scan-accounting-toggle">
+                            <label><input type="checkbox" id="measure-allocated" /><span data-i18n="measureAllocated"></span></label>
+                            <span class="filter-hint" data-i18n="measureAllocatedHint"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-scan" class="pill-btn pill-btn-primary" disabled data-i18n="startScan"></button>
+                <button type="button" id="btn-cancel" class="pill-btn pill-btn-ghost hidden" data-i18n="cancel"></button>
+            </div>
+
+            <div id="duplicate-controls" class="feature-toolbar hidden"></div>
+            <div id="cleanup-controls" class="feature-toolbar hidden"></div>
+        </section>
+
+        <div id="error-banner" class="error-banner hidden" role="alert">
+            <span id="error-banner-text"></span>
+            <button type="button" id="btn-error-dismiss" class="link-btn" data-i18n="close"></button>
+        </div>
+
+        <main class="content">
+            <aside id="tree-panel" class="tree-panel hidden">
+                <div class="tree-panel-title">
+                    <span id="scan-size-heading" data-i18n="folderTree" data-i18n-title="logicalSizeHint"></span>
+                    <button type="button" id="btn-charts" class="tree-panel-icon-btn" data-i18n-title="chartsTitle" data-i18n-aria="chartsTitle">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 19V13M12 19V8M19 19V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="tree-root" class="tree-root"></div>
+                <div class="tree-panel-tools hidden">
+                    <button type="button" id="btn-duplicates" class="duplicates-entry" aria-controls="duplicates-view" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                            <rect x="8" y="8" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.6"/>
+                            <path d="M15 8V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v5a3 3 0 0 0 3 3h1" stroke="currentColor" stroke-width="1.6"/>
+                        </svg>
+                        <span data-i18n="findDuplicates"></span>
+                    </button>
+                </div>
+            </aside>
+
+            <div class="view-area">
+                <p id="scan-coverage" class="scan-coverage hidden" role="status"></p>
+                <div id="breadcrumb-row" class="breadcrumb-row hidden">
+                    <div id="breadcrumb" class="breadcrumb-items"></div>
+
+                    <div class="search-box" id="search-box">
+                        <svg class="search-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 20L16.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <input type="text" id="search-input" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchLabel" autocomplete="off" spellcheck="false" />
+                        <button type="button" id="btn-search-clear" class="search-clear hidden" data-i18n-title="clearSearch" data-i18n-aria="clearSearch">✕</button>
+                    </div>
+
+                    <div class="view-toggle" id="view-toggle">
+                        <button type="button" data-mode="list" class="view-toggle-btn" data-i18n="viewList"></button>
+                        <button type="button" data-mode="grid" class="view-toggle-btn" data-i18n="viewGrid"></button>
+                    </div>
+                </div>
+
+                <div class="canvas">
+                    <div id="empty-state" class="empty-state">
+                        <img class="empty-state-icon" src="icon.svg" alt="" width="72" height="72" draggable="false" />
+                        <div class="empty-state-title" data-i18n="emptyTitle"></div>
+                        <div class="empty-state-sub" data-i18n="emptySubtitle"></div>
+                        <button type="button" id="btn-duplicates-empty" class="duplicates-entry empty-state-tool hidden" aria-controls="duplicates-view">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                                <rect x="8" y="8" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.6"/>
+                                <path d="M15 8V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v5a3 3 0 0 0 3 3h1" stroke="currentColor" stroke-width="1.6"/>
+                            </svg>
+                            <span data-i18n="findDuplicates"></span>
+                        </button>
+                    </div>
+
+                    <div id="file-list" class="file-list hidden"></div>
+                    <div id="grid-view" class="grid-view hidden"></div>
+                    <div id="search-results" class="search-results hidden"></div>
+                    <div id="charts-view" class="charts-view hidden">
+                        <div class="charts-view-header">
+                            <span data-i18n="chartsTitle"></span>
+                            <button type="button" id="btn-charts-close" class="link-btn" data-i18n="close"></button>
+                        </div>
+                        <div id="charts-body" class="charts-body"></div>
+                    </div>
+
+                    <div id="duplicates-view" class="charts-view hidden">
+                        <div class="charts-view-header">
+                            <span data-i18n="dupTitle"></span>
+                            <div class="duplicates-view-actions">
+                                <button type="button" id="btn-dup-restart" class="link-btn hidden" data-i18n="dupNewSearch"></button>
+                                <details id="dup-more-actions" class="dup-more-actions hidden">
+                                    <summary class="pill-btn pill-btn-ghost btn-small" data-i18n="dupMoreActions"></summary>
+                                    <div>
+                                        <button type="button" id="btn-dup-trash" class="pill-btn pill-btn-ghost btn-small hidden" data-i18n="menuTrash"></button>
+                                        <button type="button" id="btn-dup-permanent" class="pill-btn pill-btn-ghost btn-small hidden" data-i18n="menuPermanent"></button>
+                                        <button type="button" id="btn-dup-secure" class="pill-btn pill-btn-ghost btn-small hidden" data-i18n="menuSecure"></button>
+                                    </div>
+                                </details>
+                                <button type="button" id="btn-duplicates-close" class="link-btn" data-i18n="close"></button>
+                            </div>
+                        </div>
+                        <div id="duplicates-body" class="charts-body"></div>
+                    </div>
+
+                    <div id="cleanup-view" class="charts-view hidden">
+                        <div id="cleanup-body" class="charts-body"></div>
+                    </div>
+
+                    <div id="progress-toast" class="progress-toast operation-progress hidden" role="status">
+                        <div class="progress-toast-header">
+                            <span class="pulse-live"></span>
+                            <span id="progress-text" class="operation-progress-status" data-i18n="scanning"></span>
+                            <span id="progress-elapsed" class="operation-progress-elapsed" aria-live="off"></span>
+                            <button id="progress-cancel" type="button" class="pill-btn pill-btn-ghost operation-progress-cancel" data-i18n="cancel"></button>
+                        </div>
+                        <div class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Scan">
+                            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                        </div>
+                        <div id="progress-detail" class="progress-detail"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="util.js"></script>
+    <script src="tree.js"></script>
+    <script src="scanSnapshots.js"></script>
+    <script src="list.js"></script>
+    <script src="grid.js"></script>
+    <script src="charts.js"></script>
+    <script src="operationProgress.js"></script>
+    <script src="duplicates.js"></script>
+    <script src="cleanup.js"></script>
+    <script src="contextMenu.js"></script>
+    <script src="modal.js"></script>
+    <script src="search.js"></script>
+
+    <!-- Bare specifiers used by the vendored Tauri API modules. -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@tauri-apps/api/core": "./vendor/tauri-api/core.js",
+            "@tauri-apps/api/window": "./vendor/tauri-api/window.js",
+            "@tauri-apps/api/event": "./vendor/tauri-api/event.js"
+        }
+    }
+    </script>
+    <script type="module" src="tauriBridge.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

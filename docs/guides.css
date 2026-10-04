@@ -1,0 +1,76 @@
+/* Articles share the app's colors, typography and buttons. */
+.guide-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.guide-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); background: var(--surface); text-decoration: none; transition: border-color .2s, background .2s; }
+.guide-card:hover { border-color: var(--accent); background: var(--surface-2); }
+.guide-card:focus-visible, .guide-main a:focus-visible { outline: 2px solid var(--accent-hover); outline-offset: 5px; }
+.guide-card h3 { font-size: 22px; line-height: 1.35; margin: 12px 0; }
+.guide-card p { color: var(--text-2); font-size: 15px; line-height: 1.75; margin: 0 0 24px; }
+.guide-read { margin-top: auto; color: var(--text-1); font-size: 14px; font-weight: 700; }
+.guide-main { position: relative; z-index: 1; max-width: 920px; padding-top: 56px; padding-bottom: 56px; }
+.guide-header h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.2; letter-spacing: -.025em; margin: 16px 0 24px; text-wrap: balance; }
+.guide-back { display: inline-block; color: var(--text-2); margin-bottom: 32px; font-size: 14px; text-decoration: none; }
+.guide-main p, .guide-main li { line-height: 1.85; color: var(--text-2); font-size: 16px; }
+.guide-main .guide-intro { font-size: 18px; }
+.guide-main .guide-result { padding: 20px 24px; border-left: 3px solid var(--accent); background: var(--surface); color: var(--text-1); border-radius: 0 var(--radius) var(--radius) 0; }
+.guide-contents { margin: 32px 0; padding: 24px; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); background: var(--surface); }
+.guide-contents h2 { font-size: 17px; margin: 0 0 16px; }
+.guide-contents ol { padding-left: 24px; margin: 0; }
+.guide-main a:not(.pill-btn) { text-underline-offset: 4px; }
+.guide-contents a:hover, .guide-next a:hover { color: var(--accent-hover); }
+.guide-main section { padding: 32px 0; }
+.guide-main section h2, .guide-next h2, .guide-cta h2 { font-size: 25px; line-height: 1.4; margin: 0 0 20px; text-wrap: balance; }
+.guide-steps { padding-left: 28px; }
+.guide-steps li { padding-left: 8px; margin-bottom: 24px; }
+.guide-steps li::marker { color: var(--accent-hover); font-weight: 800; }
+.guide-steps h3 { color: var(--text-1); font-size: 18px; margin: 0 0 8px; }
+.guide-steps p { margin: 0; }
+.guide-shot { margin: 32px 0 0; }
+.guide-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); }
+.guide-shot figcaption { margin-top: 12px; color: var(--text-3); font-size: 13px; line-height: 1.7; }
+.guide-next { padding: 28px 0; border-top: 1px solid var(--border-soft); }
+.guide-next a { line-height: 1.7; }
+.guide-cta { padding: 28px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); margin-top: 24px; }
+.guide-cta .pill-btn { margin-top: 12px; }
+.guide-card-time { float: right; margin-left: 12px; color: var(--text-3); font-weight: 400; }
+.guide-main .guide-meta { font-size: 13px; color: var(--text-3); margin-bottom: 24px; }
+.guide-main .guide-sources { font-size: 13px; margin-top: 24px; overflow-wrap: anywhere; }
+.guide-code { max-width: 100%; overflow-x: auto; padding: 18px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); font: 13px/1.8 var(--font-mono); }
+.guide-next ul { padding-left: 20px; }
+.guide-next li { margin-bottom: 12px; }
+.knowledge-all { margin-top: 24px; }
+.knowledge-hub { max-width: 1120px; }
+.knowledge-topics { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 16px; }
+.knowledge-hub .guide-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.knowledge-hub section { scroll-margin-top: 100px; }
+.knowledge-hub .section-head { margin-bottom: 24px; }
+.knowledge-hub .guide-card { padding: 24px; }
+.knowledge-hub .guide-card h3 { font-size: 20px; }
+.guide-main .guide-card p { font-size: 15px; }
+.benchmark-report .dupe-bench-head { margin-top: 24px; }
+.benchmark-report h3 { margin: 24px 0 12px; }
+.benchmark-report .faq-answer p { font-size: 14px; }
+.bench-preview-note { margin: 20px 0; font-size: 13px; line-height: 1.7; color: var(--text-3); }
+.bench-preview-duplicate { margin: 24px 0 0; font-size: 15px; line-height: 1.8; color: var(--text-2); }
+@media (min-width: 681px) and (max-width: 980px) {
+    .knowledge-hub .guide-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+    .guide-cards, .knowledge-hub .guide-cards { grid-template-columns: 1fr; }
+    .guide-card, .guide-cta { padding: 22px; }
+    .guide-main { padding-top: 32px; }
+    .guide-main p, .guide-main li { font-size: 15px; }
+    .guide-main .guide-intro { font-size: 16px; }
+    .guide-main ~ footer .footer-row { flex-wrap: wrap; gap: 16px; }
+    .guide-main ~ footer .footer-links { flex-wrap: wrap; }
+    body:has(.guide-main) .nav-right .pill-btn { font-size: 11px; padding-inline: 12px; white-space: normal; text-align: center; }
+    body:has(.guide-main) .site-nav-inner { height: auto; min-height: 64px; flex-wrap: wrap; padding-block: 12px; gap: 10px; }
+    body:has(.guide-main) .nav-right { flex: 1 1 150px; justify-content: flex-end; }
+}
+
+.knowledge-tags { align-items: center; margin-top: 0; }
+.knowledge-tags > span { color: var(--text-3); font-size: 13px; }
+.knowledge-tags [aria-current="page"] { color: var(--accent-hover); border-color: var(--accent); }
+.guide-tags { margin-top: -8px; }
+
+.knowledge-hub .guide-card[data-tags~="discreveal"] { border-color: var(--accent); }
+.knowledge-hub .guide-card[data-tags~="discreveal"]:hover { border-color: var(--accent-hover); }

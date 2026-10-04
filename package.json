@@ -1,0 +1,24 @@
+{
+  "name": "discreveal",
+  "version": "0.3.15",
+  "description": "Disk space analyzer, duplicate finder and system cleanup for Windows",
+  "author": "markMarkinson",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "scripts": {
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build --no-bundle -- --locked",
+    "dist:portable": "node scripts/buildPortable.js",
+    "live:sync": "node scripts/syncLive.js",
+    "site:build": "node scripts/buildSeoPages.js",
+    "test": "node --test tests/*.test.cjs",
+    "licenses:index": "node scripts/buildNotices.js"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.12.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.0"
+  }
+}

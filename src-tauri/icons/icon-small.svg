@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <metadata id="discReveal-markMarkinson">discReveal by markMarkinson</metadata>
+  <rect width="108" height="108" rx="24" fill="#201919"/>
+  <g transform="translate(54 54) rotate(-90)" fill="none">
+    <circle r="30" stroke="#362929" stroke-width="22"/>
+    <circle r="30" stroke="#e50914" stroke-width="22" stroke-dasharray="54.5 134"/>
+    <circle r="30" stroke="#f5c518" stroke-width="22" stroke-dasharray="37.5 151" stroke-dashoffset="-58"/>
+  </g>
+</svg>

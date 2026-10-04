@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Scanzeit im direkten Vergleich">
+  <metadata id="discReveal-markMarkinson">discReveal by markMarkinson</metadata>
+  <rect width="780" height="360" rx="12" fill="#120e0d"/>
+  <text x="24" y="34" fill="#f5f5f5" font-size="17" font-weight="700">Scanzeit im direkten Vergleich</text>
+  <text x="24" y="54" fill="#a3a3a1" font-size="12.5">rund 200.000 Dateien · 14,95 GB · Median aus 5 Durchläufen · kürzer ist besser</text>
+  <line x1="190" y1="70" x2="190" y2="303" stroke="#362929"/>
+  <text x="177" y="96" fill="#f5f5f5" font-size="13" font-weight="700" text-anchor="end">DiscReveal 0.2.3</text>
+  <rect x="190" y="78" width="50.1" height="26" rx="4" fill="#e50914"/>
+  <text x="250.1" y="96" fill="#f5f5f5" font-size="13" font-weight="700">1,19 s</text>
+  <text x="177" y="144" fill="#cfcfcf" font-size="13" text-anchor="end">robocopy /L</text>
+  <rect x="190" y="126" width="76.1" height="26" rx="4" fill="#4a4040"/>
+  <text x="276.1" y="144" fill="#f5f5f5" font-size="13" font-weight="700">1,81 s</text>
+  <text x="177" y="192" fill="#cfcfcf" font-size="13" text-anchor="end">Node.js script</text>
+  <rect x="190" y="174" width="292.7" height="26" rx="4" fill="#4a4040"/>
+  <text x="492.7" y="192" fill="#f5f5f5" font-size="13" font-weight="700">6,95 s</text>
+  <text x="177" y="240" fill="#cfcfcf" font-size="13" text-anchor="end">cmd dir /s</text>
+  <rect x="190" y="222" width="353.8" height="26" rx="4" fill="#4a4040"/>
+  <text x="553.8" y="240" fill="#f5f5f5" font-size="13" font-weight="700">8,40 s</text>
+  <text x="177" y="288" fill="#cfcfcf" font-size="13" text-anchor="end">PowerShell 7.6.5</text>
+  <rect x="190" y="270" width="490.0" height="26" rx="4" fill="#4a4040"/>
+  <text x="690.0" y="288" fill="#f5f5f5" font-size="13" font-weight="700">11,64 s</text>
+  <text x="24" y="326" fill="#a3a3a1" font-size="11.5">DiscReveal: vom Klick bis zur fertigen Ergebnisliste, inklusive Oberfläche.</text>
+  <text x="24" y="346" fill="#a3a3a1" font-size="11.5">Alle Methoden: gleicher Ordner, Windows-Dateicache aufgewärmt, keine Dateiinhalte gelesen.</text>
+</svg>

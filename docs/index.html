@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" data-disc-reveal="discReveal" data-mark-markinson="markMarkinson">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="generator" content="discReveal by markMarkinson" />
+    <meta name="author" content="markMarkinson" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css?v=6380101ee5dc" />
+    <link rel="stylesheet" href="guides.css?v=d8567a81b0a2" />
+    
+    <title>DiscReveal – Disk Space, Duplicates &amp; Windows Cleanup</title>
+    <meta name="description" content="Find large files, remove duplicate copies and clean up Windows with DiscReveal. Live results, occupied-space measurement and control over what stays. Free and portable." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://discreveal.com/" />
+    <link rel="alternate" type="text/markdown" href="https://discreveal.com/index.md" />
+    <link rel="describedby" type="text/plain" href="https://discreveal.com/llms.txt" />
+    <link rel="alternate" hreflang="en" href="https://discreveal.com/" />
+    <link rel="alternate" hreflang="de" href="https://discreveal.com/de/" />
+    <link rel="alternate" hreflang="x-default" href="https://discreveal.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DiscReveal" />
+    <meta property="og:title" content="DiscReveal – Disk Space, Duplicates &amp; Windows Cleanup" />
+    <meta property="og:description" content="Find large files, remove duplicate copies and clean up Windows with DiscReveal. Live results, occupied-space measurement and control over what stays. Free and portable." />
+    <meta property="og:url" content="https://discreveal.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:image" content="https://discreveal.com/images/list-view.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="DiscReveal list view with folder sizes and storage bars" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DiscReveal – Disk Space, Duplicates &amp; Windows Cleanup" />
+    <meta name="twitter:description" content="Find large files, remove duplicate copies and clean up Windows with DiscReveal. Live results, occupied-space measurement and control over what stays. Free and portable." />
+    <meta name="twitter:image" content="https://discreveal.com/images/list-view.png" />
+    <meta name="twitter:image:alt" content="DiscReveal list view with folder sizes and storage bars" />
+    <link rel="preload" href="fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://discreveal.com/#software","name":"DiscReveal","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","description":"Find large files, remove duplicate copies and clean up Windows with DiscReveal. Live results, occupied-space measurement and control over what stays. Free and portable.","inLanguage":["en","de"],"url":"https://discreveal.com/","downloadUrl":"https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe","fileSize":"5361664 bytes","softwareRequirements":"Microsoft Edge WebView2; if missing, the app offers an installation link","processorRequirements":"x64","isAccessibleForFree":true,"image":"https://discreveal.com/icon.png","sameAs":"https://github.com/markmarkinson/discreveal","license":"https://github.com/markmarkinson/discreveal/blob/main/LICENSE","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"markMarkinson","url":"https://github.com/markmarkinson"},"screenshot":"https://discreveal.com/images/list-view.png","featureList":["Live results","Large files, easy to find","Clean up with control","Duplicate finder","Understand your storage","German and English","Free up space in Windows"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://discreveal.com/#faq","mainEntity":[{"@type":"Question","name":"How does DiscReveal protect my files?","acceptedAnswer":{"@type":"Answer","text":"DiscReveal scans locally and never removes files without confirmation. Sensitive folders need an extra acknowledgement. Download from the official website or GitHub release; each release includes a fingerprint you can use to check the program file."}},{"@type":"Question","name":"Does DiscReveal clean up junk automatically, or do I decide what goes?","acceptedAnswer":{"@type":"Answer","text":"You decide what to remove. The drive scan shows where your space goes. In the duplicate finder, “Select all suitable copies” selects personal documents and media while keeping one original per group. You review the selection before confirming cleanup; program and system files are excluded from those bulk suggestions."}},{"@type":"Question","name":"What can I recover if I delete something by mistake?","acceptedAnswer":{"@type":"Answer","text":"Depends on the mode. Recycle Bin deletions are recoverable exactly like deleting in Explorer. Permanent and secure delete are not — secure delete overwrites accessible file contents first. On SSDs, older copies in internally managed blocks may remain."}},{"@type":"Question","name":"Can I exclude folders from a scan?","acceptedAnswer":{"@type":"Answer","text":"Yes — add any folder to the exclusion list, or rely on the defaults. DiscReveal already skips the common game-library folders (Steam, Epic, GOG, Riot, EA, Ubisoft, Xbox) out of the box, since those rarely need auditing."}},{"@type":"Question","name":"Can I filter the drive scan and duplicate search?","acceptedAnswer":{"@type":"Answer","text":"Yes. The drive scan has folder exclusions and size limits. The duplicate search has its own minimum and maximum file size, plus included or excluded file types. Its results can also be filtered live by name or path, size, extension and whether identical files share a name."}},{"@type":"Question","name":"Can I scan a USB or external drive?","acceptedAnswer":{"@type":"Answer","text":"Yes, any local drive with a letter, USB included. The scanner adapts its thread count to the drive type — fewer parallel reads on USB and spinning disks, more on NVMe/SSD — so it stays fast without overloading the drive."}},{"@type":"Question","name":"How is this different from checking a folder’s properties in Explorer?","acceptedAnswer":{"@type":"Answer","text":"Folder properties in Explorer measure the folder you chose. DiscReveal gives you an overview of the drive, with folder sizes, a searchable folder tree, charts and a separate duplicate finder."}},{"@type":"Question","name":"Is DiscReveal really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — no cost, no ads, no telemetry, no account. The official app is free for personal and internal business use. Its source code is publicly available to inspect. Modifications and commercial redistribution require permission; see the license."}},{"@type":"Question","name":"Is DiscReveal portable?","acceptedAnswer":{"@type":"Answer","text":"Yes. Download the executable and run it without installing DiscReveal. You can launch it from a USB stick too. Keep discreveal_data with the app to take your preferences along. WebView2 is required; there is no DiscReveal background service."}},{"@type":"Question","name":"Does duplicate cleanup keep an original?","acceptedAnswer":{"@type":"Answer","text":"Yes. One original stays in each duplicate group. Cleanup checks selected copies against that original again before moving them to the Recycle Bin. Changed or missing files and hard links are skipped. Potential savings use measured occupied space; unavailable measurements are identified and left out of the total. Space becomes free after emptying the Recycle Bin."}},{"@type":"Question","name":"Why does the duplicate search skip files under 10 MB?","acceptedAnswer":{"@type":"Answer","text":"The default focuses on larger files, where removing a copy usually frees more space. Turn off “Exclude small files” to scan all sizes, or choose your own limit. The scan still needs to visit folders; the time saved depends on your files."}},{"@type":"Question","name":"Does DiscReveal save or upload scan results?","acceptedAnswer":{"@type":"Answer","text":"Scan results stay in memory and are not uploaded. Settings are saved locally. The duplicate-search cache is off by default, requires your consent and can be cleared. WebView2 keeps a local interface profile. The update link includes only the app version, language and program fingerprint when available."}},{"@type":"Question","name":"What does system cleanup include?","acceptedAnswer":{"@type":"Answer","text":"Choose Cleanup → Check everything. DiscReveal checks supported temporary files, browser, app, package and graphics caches, error reports, Windows system leftovers and the Recycle Bin. Results are preselected in broad areas; deselect anything you want to keep, then confirm one cleanup operation. Running apps and protected or recent files are skipped. Windows handles its system leftovers; protected areas need administrator rights. Previous Windows versions and the Recycle Bin are separate areas you can deselect. Their removal is permanent and may remove recovery or rollback options. Caches are rebuilt when needed. Nothing is deleted before you confirm."}},{"@type":"Question","name":"Why can file size differ from occupied disk space?","acceptedAnswer":{"@type":"Answer","text":"File size describes how much data a file contains. Occupied space can differ because of compression, reserved blocks or several names pointing to the same file. For a quick overview, DiscReveal shows file sizes. Enable “Measure occupied space” under Scan → Filter for a more detailed measurement. It takes longer and counts shared files once. Filesystem metadata, snapshots and backups are outside this measurement."}},{"@type":"Question","name":"What does an incomplete scan mean?","acceptedAnswer":{"@type":"Answer","text":"It means some data could not be fully examined, for example because you stopped the scan, access was denied or a file changed. The results you can see are still useful, but they do not cover everything. Check the notice and scan again when needed. An unavailable measurement is identified rather than presented as zero occupied space."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://discreveal.com/#website","name":"DiscReveal","url":"https://discreveal.com/","inLanguage":["en","de"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://discreveal.com/#webpage","url":"https://discreveal.com/","name":"DiscReveal – Disk Space, Duplicates & Windows Cleanup","description":"Find large files, remove duplicate copies and clean up Windows with DiscReveal. Live results, occupied-space measurement and control over what stays. Free and portable.","inLanguage":"en","isPartOf":{"@id":"https://discreveal.com/#website"},"mainEntity":{"@id":"https://discreveal.com/#software"}}</script>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="site-nav-inner">
+            <a href="#top" class="brand">
+                <img src="icon.png" alt="" width="28" height="28" />
+                <span>DiscReveal</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features" data-i18n="navFeatures">Features</a>
+                <a href="#benchmarks" data-i18n="navBenchmarks">Benchmarks</a>
+                <a href="#security" data-i18n="navSecurity">Security</a>
+                <a href="/guides/" data-i18n="navGuides">Learn</a>
+                <a href="#faq" data-i18n="navFaq">FAQ</a>
+            </div>
+            <details class="mobile-menu">
+                <summary data-i18n="navMenu">Menu</summary>
+                <div class="mobile-menu-links">
+                    <a href="#features" data-i18n="navFeatures">Features</a>
+                    <a href="#benchmarks" data-i18n="navBenchmarks">Benchmarks</a>
+                    <a href="#security" data-i18n="navSecurity">Security</a>
+                    <a href="/guides/" data-i18n="navGuides">Learn</a>
+                    <a href="#faq" data-i18n="navFaq">FAQ</a>
+                </div>
+            </details>
+            <div class="nav-right">
+                <a class="nav-github" href="https://github.com/markmarkinson/discreveal" aria-label="GitHub" title="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+                </a>
+                <a href="de/" class="language-btn" aria-label="Auf Deutsch umschalten" title="Auf Deutsch umschalten"><svg viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="5" height="3" fill="#ffce00"/><rect width="5" height="2" fill="#dd0000"/><rect width="5" height="1" fill="#000"/></svg></a>
+                <a href="#download" class="pill-btn pill-btn-primary" data-i18n="navDownload">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+
+        <!-- ── Hero ──────────────────────────────────────────────────────── -->
+        <header class="hero wrap">
+            <div class="hero-grid">
+                <div>
+                    <span class="badge"><span class="scan-dot"></span><span data-i18n="heroBadge">Free · Source code available</span></span>
+                    <h1><span data-i18n="heroTitleA">See what’s eating your </span><em data-i18n="heroTitleEm">disk space</em><span data-i18n="heroTitleB">.</span></h1>
+                    <p class="hero-sub" data-i18n="heroSub">Find large folders, duplicate files and removable caches on your hard drive or SSD. DiscReveal shows where your space goes while it scans — free, portable and ready to run.</p>
+                    <div class="hero-cta">
+                        <a href="https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe" id="hero-download-btn" class="pill-btn pill-btn-primary js-download-link">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0-5-5m5 5 5-5M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-i18n="heroDownload">Download for Windows</span>
+                        </a>
+                        <a href="https://github.com/markmarkinson/discreveal" class="pill-btn pill-btn-ghost" data-i18n="heroGithub">View source on GitHub</a>
+                    </div>
+                    <div class="hero-stats">
+                        <span class="stat-chip" data-i18n="statWindows">Windows 10/11</span>
+                        <span class="stat-chip" data-i18n="statSize">≈ 5.4 MB</span>
+                        <span class="stat-chip" data-i18n="statLicense">No account needed</span>
+                    </div>
+                </div>
+
+                <!-- Real app markup/classes, animated by app.js — not a static screenshot. -->
+                <div class="demo-window" aria-hidden="true">
+                    <div class="demo-titlebar">
+                        <span class="brand"><img src="icon.png" alt="" width="18" height="18" /><span>DiscReveal</span></span>
+                        <span class="demo-window-dots"><span></span><span></span><span></span></span>
+                    </div>
+                    <div class="demo-body">
+                        <div class="demo-list">
+                            <div class="demo-row" data-pct="38.1"><span class="demo-row-dot"></span><span class="demo-row-name">Users</span><span class="demo-row-bar-track"><span class="demo-row-bar-fill"></span></span><span class="demo-row-pct"></span><span class="demo-row-size">172 GB</span></div>
+                            <div class="demo-row" data-pct="21.7"><span class="demo-row-dot"></span><span class="demo-row-name">Program Files</span><span class="demo-row-bar-track"><span class="demo-row-bar-fill"></span></span><span class="demo-row-pct"></span><span class="demo-row-size">98 GB</span></div>
+                            <div class="demo-row" data-pct="18.0"><span class="demo-row-dot"></span><span class="demo-row-name">SteamLibrary</span><span class="demo-row-bar-track"><span class="demo-row-bar-fill"></span></span><span class="demo-row-pct"></span><span class="demo-row-size">81 GB</span></div>
+                            <div class="demo-row" data-pct="14.0"><span class="demo-row-dot"></span><span class="demo-row-name">Windows</span><span class="demo-row-bar-track"><span class="demo-row-bar-fill"></span></span><span class="demo-row-pct"></span><span class="demo-row-size">63 GB</span></div>
+                            <div class="demo-row" data-pct="6.2"><span class="demo-row-dot"></span><span class="demo-row-name">ProgramData</span><span class="demo-row-bar-track"><span class="demo-row-bar-fill"></span></span><span class="demo-row-pct"></span><span class="demo-row-size">28 GB</span></div>
+                            <div class="demo-row" data-pct="2.0"><span class="scan-dot"></span><span class="demo-row-name">node_modules</span><span class="demo-row-bar-track"><span class="demo-row-bar-fill"></span></span><span class="demo-row-pct"></span><span class="demo-row-size">9 GB</span></div>
+                        </div>
+                        <div class="demo-toast">
+                            <div class="demo-toast-header"><span class="pulse-live"></span><span data-i18n="demoScanning">Scanning folders…</span></div>
+                            <div class="demo-progress-track"><div class="demo-progress-fill"></div></div>
+                            <div class="demo-progress-detail" data-i18n="demoDetail">Example data · 1,204,586 files · 451 GB · C:\</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── Why ───────────────────────────────────────────────────────── -->
+        <section class="wrap">
+            <div class="section-head">
+                <p class="section-kicker" data-i18n="whyKicker">More space, less searching</p>
+                <h2 data-i18n-html="whyTitle">Find what fills your drive. <em>Choose what stays.</em></h2>
+                <p data-i18n="whyBody">A full drive does not tell you what to remove. DiscReveal brings folder sizes, duplicate detection and Windows cleanup into one app, so you can find large files and decide what you no longer need.</p>
+            </div>
+            <ul class="why-list">
+                <li data-i18n="why1">Results appear while the scan runs and keep updating</li>
+                <li data-i18n="why2">Portable and ready to use — no installation, just download and launch</li>
+                <li data-i18n="why3">Find files anywhere in the scanned drive, even inside nested folders</li>
+                <li data-i18n="why4">Three delete modes: Recycle Bin, permanent, secure overwrite</li>
+                <li data-i18n="why5">Extra confirmation for sensitive Windows and program folders</li>
+                <li data-i18n="why6">Switch between English and German without restarting</li>
+                <li data-i18n="why7">Find identical files across drives and keep an original when cleaning up copies</li>
+                <li data-i18n="why8">See which file types and large files take up the most space</li>
+            </ul>
+        </section>
+
+        <!-- ── Features ──────────────────────────────────────────────────── -->
+        <section id="features" class="wrap">
+            <div class="section-head">
+                <p class="section-kicker" data-i18n="featuresKicker">Features</p>
+                <h2 data-i18n="featuresTitle">From a full drive to a clear overview</h2>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-copy">
+                    <h3 data-i18n="f1Title">Live results</h3>
+                    <p data-i18n="f1Body">See folder sizes while scanning and browse the results straight away. For a closer look, measure occupied file space, accounting for compression and shared files. Choose between a quick overview and a more detailed measurement.</p>
+                </div>
+                <button type="button" class="feature-media window-frame js-lightbox-feature" data-open-index="2">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/live-scan.png" alt="Folder sizes updating during a DiscReveal drive scan" loading="lazy" width="1280" height="800" />
+                </button>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-copy">
+                    <h3 data-i18n="f2Title">Large files, easy to find</h3>
+                    <p data-i18n="f2Body">Start with the largest folders in list view, browse file icons in grid view, or search the whole scanned drive by name. Size bars and percentages show what makes the biggest difference.</p>
+                </div>
+                <div class="feature-media split">
+                    <button type="button" class="window-frame js-lightbox-feature" data-open-index="0">
+                        <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                        <img src="images/list-view.png" alt="DiscReveal list view with folder sizes and storage bars" loading="lazy" width="1280" height="800" />
+                    </button>
+                    <button type="button" class="window-frame js-lightbox-feature" data-open-index="1">
+                        <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                        <img src="images/icon-view.png" alt="DiscReveal grid view with file-type icons" loading="lazy" width="1280" height="800" />
+                    </button>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-copy">
+                    <h3 data-i18n="f3Title">Clean up with control</h3>
+                    <p data-i18n="f3Body">Choose what to remove and how. DiscReveal asks for confirmation before deletion and adds an extra warning for Windows contents and selected sensitive root and profile paths.</p>
+                    <table>
+                        <thead><tr><th data-i18n="f3ModeCol">Mode</th><th data-i18n="f3BehaviorCol">Behavior</th></tr></thead>
+                        <tbody>
+                            <tr><td data-i18n="f3Mode1">Recycle Bin</td><td data-i18n="f3Behavior1">Recoverable, same as deleting in Explorer</td></tr>
+                            <tr><td data-i18n="f3Mode2">Delete permanently</td><td data-i18n="f3Behavior2">Skips the Recycle Bin</td></tr>
+                            <tr><td data-i18n="f3Mode3">Secure delete</td><td data-i18n="f3Behavior3">Overwrites accessible file contents with random data first; refuses hard-linked files</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="feature-media window-frame js-lightbox-feature" data-open-index="4">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/protected-dialog.png" alt="Confirmation with an explanation for a protected folder" loading="lazy" width="1280" height="800" />
+                </button>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-copy">
+                    <h3 data-i18n="f4Title">Duplicate finder</h3>
+                    <p data-i18n="f4Body">Find identical files, even with different names, and see how much occupied space extra copies could free up. Filter the live results and choose suitable copies. One original stays; selected copies are checked again before moving to the Recycle Bin.</p>
+                </div>
+                <button type="button" class="feature-media window-frame js-lightbox-feature" data-open-index="5">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/duplicates.png" alt="Confirmed duplicate groups with an original retained" loading="lazy" width="1280" height="800" />
+                </button>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-copy">
+                    <h3 data-i18n="f5Title">Understand your storage</h3>
+                    <p data-i18n="f5Body">Open the chart icon next to the folder tree to see storage by file type, size and age, plus the largest individual files. Use the charts to decide where to look next.</p>
+                </div>
+                <button type="button" class="feature-media window-frame js-lightbox-feature" data-open-index="6">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/charts.png" alt="Charts showing storage by file type, size and age" loading="lazy" width="1280" height="800" />
+                </button>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-copy">
+                    <h3 data-i18n="f6Title">German and English</h3>
+                    <p data-i18n="f6Body">Use DiscReveal in English or German. Menus, explanations and dialogs switch immediately. The version-check page follows your language setting too.</p>
+                </div>
+                <div class="feature-media window-frame">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img class="lang-cross-shot" src="images/list-view-de.png" alt="DiscReveal list view with folder sizes and storage bars" loading="lazy" width="1280" height="800" />
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap" aria-labelledby="cleanup-feature-title">
+            <div class="feature-row">
+                <div class="feature-copy">
+                    <h3 id="cleanup-feature-title" data-i18n="f7Title">Free up space in Windows</h3>
+                    <p data-i18n="f7Body">Check temporary files, browser and app caches, Windows leftovers and the Recycle Bin. Review the broad areas, deselect what you want to keep and confirm the cleanup. System areas may require administrator rights.</p>
+                </div>
+                <button type="button" class="feature-media window-frame js-lightbox-feature" data-open-index="7">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/cleanup.png" alt="Windows cleanup preview grouped by broad areas" loading="lazy" width="1280" height="800" />
+                </button>
+            </div>
+        </section>
+
+        <!-- ── Benchmarks ────────────────────────────────────────────────── -->
+        <section id="benchmarks" class="wrap"><div class="section-head"><p class="section-kicker">Benchmarks</p><h2>Less waiting. More insight.</h2><p>Around 200,000 files, 14.95 GB: DiscReveal displays the finished scan results in 1.19 seconds. Here is how the app compares with Windows commands and a script on the same folder.</p></div><div class="bench-grid"><div class="bench-chart"><img src="/images/chart-scan-speed.svg" alt="Scan comparison with DiscReveal, robocopy, Node.js, cmd and PowerShell" loading="lazy"></div><div class="bench-stats"><div><div class="bench-stat-num">1.19 s</div><div class="bench-stat-label">to the finished results, including the interface</div></div><div><div class="bench-stat-num">1.5×</div><div class="bench-stat-label">faster than robocopy /L in this test</div></div><div><div class="bench-stat-num">9.8×</div><div class="bench-stat-label">faster than PowerShell in this test</div></div></div></div><div class="knowledge-topics"><a class="pill-btn pill-btn-ghost" href="/benchmarks/drive-scan/">Drive scan in detail →</a><a class="pill-btn pill-btn-ghost" href="/benchmarks/duplicate-search/">Duplicate search in detail →</a></div></section>
+
+        <!-- ── Security ──────────────────────────────────────────────────── -->
+        <section id="security" class="wrap">
+            <div class="section-head">
+                <p class="section-kicker" data-i18n="securityKicker">Privacy &amp; control</p>
+                <h2 data-i18n="securityTitle">Your files. Your decision.</h2>
+            </div>
+            <ul class="security-list">
+                <li><strong data-i18n="secTitle1">Only within the scanned area</strong><p data-i18n="secBody1">File actions are checked against the folder you scanned. The scan root itself and paths outside that area are excluded.</p></li>
+                <li><strong data-i18n="secTitle2">Extra care for sensitive folders</strong><p data-i18n="secBody2">Windows contents and selected system roots and user-profile paths require an additional acknowledgement explaining the risk. This extra protection does not apply to every subfolder.</p></li>
+                <li><strong data-i18n="secTitle3">Preview without launching programs</strong><p data-i18n="secBody3">Opening a program, script or shortcut shows it in Explorer rather than running it.</p></li>
+                <li><strong data-i18n="secTitle4">Local scanning, no account</strong><p data-i18n="secBody4">Scans run on your computer without telemetry or an account. The app interface blocks external requests. Checking for updates opens a page in your browser only when you click the update icon.</p></li>
+                <li><strong data-i18n="secTitle5">Your data stays with you</strong><p data-i18n="secBody5">Scan results stay in memory. Your settings are saved locally. A cache for faster repeat duplicate searches is optional, off by default and can be cleared. The interface also uses a local WebView2 profile. Scanned files and paths are not uploaded.</p></li>
+                <li><strong data-i18n="secTitle6">Public source, tested features</strong><p data-i18n="secBody6">The source code is public. Automated tests cover scanning, file actions, duplicate cleanup and the version-check page.</p></li>
+            </ul>
+        </section>
+
+        <!-- ── Download ──────────────────────────────────────────────────── -->
+        <section id="download" class="wrap">
+            <div class="section-head">
+                <p class="section-kicker" data-i18n="downloadKicker">Download</p>
+                <h2 data-i18n-html="downloadTitle">Get <em>DiscReveal</em></h2>
+                <p data-i18n="downloadBody">One portable executable. Download it and run it — no installation required.</p>
+            </div>
+            <div class="download-panel">
+                <div class="download-main">
+                    <h3>discreveal-portable.exe</h3>
+                    <p class="download-version" id="download-version" data-release-sha256="e51292adc84530e4326a7f63f13086f09b938bc58931cf0f72d1c6c24d8b2049"><strong>DiscReveal Portable</strong> · 5.4 MB</p>
+                    <a href="https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe" id="download-btn" class="pill-btn pill-btn-primary js-download-link">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0-5-5m5 5 5-5M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span data-i18n="downloadBtn">Download DiscReveal</span>
+                    </a>
+                    <a href="https://github.com/markmarkinson/discreveal/releases/latest" class="pill-btn pill-btn-ghost" style="margin-left:10px" data-i18n="downloadReleases">Release details on GitHub</a>
+
+                    <div class="download-verify">
+                        <span data-i18n="downloadVerifyLabel">Each release lists a SHA-256 hash for its exe. To check your download against it:</span>
+                        <pre>Get-FileHash discreveal-portable.exe -Algorithm SHA256</pre>
+                        <a id="updates" class="update-jump" href="/guides/check-discreveal-version/" data-i18n="updateJump">How to check for updates →</a>
+                    </div>
+                </div>
+                <dl class="requirements">
+                    <dt data-i18n="reqOS">Operating system</dt>
+                    <dd data-i18n="reqOSVal">Windows 10 or 11, 64-bit</dd>
+                    <dt data-i18n="reqRuntime">Runtime</dt>
+                    <dd data-i18n="reqRuntimeVal">Microsoft Edge WebView2; if missing, the app offers an installation link</dd>
+                    <dt data-i18n="reqSize">Download size</dt>
+                    <dd data-i18n="reqSizeVal">5.4 MB · .exe</dd>
+                    <dt data-i18n="reqInstall">Installation</dt>
+                    <dd data-i18n="reqInstallVal">None — copy and run</dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ── Screenshots ───────────────────────────────────────────────── -->
+        <section id="screenshots" class="wrap">
+            <div class="section-head">
+                <p class="section-kicker" data-i18n="shotsKicker">Screenshots</p>
+                <h2 data-i18n="shotsTitle">What it looks like</h2>
+            </div>
+            <div class="shot-grid">
+                <button type="button" class="window-frame js-lightbox-open" data-index="0" data-label="List view">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/list-view.png" alt="DiscReveal list view with folder sizes and storage bars" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="1" data-label="Icon grid">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/icon-view.png" alt="DiscReveal grid view with file-type icons" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="2" data-label="Live scan">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/live-scan.png" alt="Folder sizes updating during a DiscReveal drive scan" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="3" data-label="Tree-wide search">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/search.png" alt="Search results across the scanned folder tree" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="4" data-label="Protected item">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/protected-dialog.png" alt="Confirmation with an explanation for a protected folder" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="5" data-label="Duplicate finder">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/duplicates.png" alt="Confirmed duplicate groups with an original retained" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="6" data-label="Statistics">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/charts.png" alt="Charts showing storage by file type, size and age" loading="lazy" width="1280" height="800" />
+                </button>
+                <button type="button" class="window-frame js-lightbox-open" data-index="7" data-label="Windows cleanup">
+                    <div class="window-frame-bar"><span></span><span></span><span></span></div>
+                    <img src="images/cleanup.png" alt="Windows cleanup preview grouped by broad areas" loading="lazy" width="1280" height="800" />
+                </button>
+            </div>
+        </section>
+
+        <!-- ── Lightbox: filled in and toggled by app.js, one shared instance ─── -->
+        <div class="lightbox-overlay hidden" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-label">
+            <div class="lightbox-frame">
+                <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous screenshot">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next screenshot">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close screenshot">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="lightbox-frame-body">
+                    <img id="lightbox-image" src="" alt="" />
+                    <div class="lightbox-caption">
+                        <span id="lightbox-label"></span>
+                        <span id="lightbox-count"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="guides" class="wrap"><div class="section-head"><p class="section-kicker">Learn & explore</p><h2>Understand your files. Clean up with care.</h2><p>Find space hogs and remove extra copies with DiscReveal. These two guides walk you through the steps in the app.</p></div><div class="guide-cards"><a class="guide-card" href="/guides/what-is-taking-up-disk-space/" data-tags="discreveal"><span class="section-kicker">Organization &amp; disk space</span><h3>What is taking up space on my Windows drive?</h3><p>Find large folders and files on Windows with DiscReveal. Follow the space usage from your drive down to the files you no longer need.</p><span class="guide-read">Read the article <span aria-hidden="true">→</span><span class="guide-card-time">3 min</span></span></a><a class="guide-card" href="/guides/remove-duplicate-files/" data-tags="discreveal"><span class="section-kicker">Organization &amp; disk space</span><h3>Remove duplicate files while keeping an original</h3><p>Find duplicate files with DiscReveal, review identical copies and keep an original. Learn how filters and Recycle Bin cleanup work on Windows.</p><span class="guide-read">Read the article <span aria-hidden="true">→</span><span class="guide-card-time">3 min</span></span></a></div><p class="knowledge-all"><a class="pill-btn pill-btn-ghost" href="/guides/">Explore all articles <span aria-hidden="true">→</span></a></p></section>
+
+        <!-- ── FAQ ───────────────────────────────────────────────────────── -->
+        <section id="faq" class="wrap">
+            <div class="section-head">
+                <p class="section-kicker" data-i18n="faqKicker">FAQ</p>
+                <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item"><summary><span>How does DiscReveal protect my files?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>DiscReveal scans locally and never removes files without confirmation. Sensitive folders need an extra acknowledgement. Download from the official website or GitHub release; each release includes a fingerprint you can use to check the program file.</p></div></details>
+<details class="faq-item"><summary><span>Does DiscReveal clean up junk automatically, or do I decide what goes?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>You decide what to remove. The drive scan shows where your space goes. In the duplicate finder, “Select all suitable copies” selects personal documents and media while keeping one original per group. You review the selection before confirming cleanup; program and system files are excluded from those bulk suggestions.</p></div></details>
+<details class="faq-item"><summary><span>What can I recover if I delete something by mistake?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Depends on the mode. Recycle Bin deletions are recoverable exactly like deleting in Explorer. Permanent and secure delete are not — secure delete overwrites accessible file contents first. On SSDs, older copies in internally managed blocks may remain.</p></div></details>
+<details class="faq-item"><summary><span>Can I exclude folders from a scan?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Yes — add any folder to the exclusion list, or rely on the defaults. DiscReveal already skips the common game-library folders (Steam, Epic, GOG, Riot, EA, Ubisoft, Xbox) out of the box, since those rarely need auditing.</p></div></details>
+<details class="faq-item"><summary><span>Can I filter the drive scan and duplicate search?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Yes. The drive scan has folder exclusions and size limits. The duplicate search has its own minimum and maximum file size, plus included or excluded file types. Its results can also be filtered live by name or path, size, extension and whether identical files share a name.</p></div></details>
+<details class="faq-item"><summary><span>Can I scan a USB or external drive?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Yes, any local drive with a letter, USB included. The scanner adapts its thread count to the drive type — fewer parallel reads on USB and spinning disks, more on NVMe/SSD — so it stays fast without overloading the drive.</p></div></details>
+<details class="faq-item"><summary><span>How is this different from checking a folder’s properties in Explorer?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Folder properties in Explorer measure the folder you chose. DiscReveal gives you an overview of the drive, with folder sizes, a searchable folder tree, charts and a separate duplicate finder.</p></div></details>
+<details class="faq-item"><summary><span>Is DiscReveal really free?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Yes — no cost, no ads, no telemetry, no account. The official app is free for personal and internal business use. Its source code is publicly available to inspect. Modifications and commercial redistribution require permission; see the license.</p></div></details>
+<details class="faq-item"><summary><span>Is DiscReveal portable?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Yes. Download the executable and run it without installing DiscReveal. You can launch it from a USB stick too. Keep discreveal_data with the app to take your preferences along. WebView2 is required; there is no DiscReveal background service.</p></div></details>
+<details class="faq-item"><summary><span>Does duplicate cleanup keep an original?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Yes. One original stays in each duplicate group. Cleanup checks selected copies against that original again before moving them to the Recycle Bin. Changed or missing files and hard links are skipped. Potential savings use measured occupied space; unavailable measurements are identified and left out of the total. Space becomes free after emptying the Recycle Bin.</p></div></details>
+<details class="faq-item"><summary><span>Why does the duplicate search skip files under 10 MB?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>The default focuses on larger files, where removing a copy usually frees more space. Turn off “Exclude small files” to scan all sizes, or choose your own limit. The scan still needs to visit folders; the time saved depends on your files.</p></div></details>
+<details class="faq-item"><summary><span>Does DiscReveal save or upload scan results?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Scan results stay in memory and are not uploaded. Settings are saved locally. The duplicate-search cache is off by default, requires your consent and can be cleared. WebView2 keeps a local interface profile. The update link includes only the app version, language and program fingerprint when available.</p></div></details>
+<details class="faq-item"><summary><span>What does system cleanup include?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>Choose Cleanup → Check everything. DiscReveal checks supported temporary files, browser, app, package and graphics caches, error reports, Windows system leftovers and the Recycle Bin. Results are preselected in broad areas; deselect anything you want to keep, then confirm one cleanup operation. Running apps and protected or recent files are skipped. Windows handles its system leftovers; protected areas need administrator rights. Previous Windows versions and the Recycle Bin are separate areas you can deselect. Their removal is permanent and may remove recovery or rollback options. Caches are rebuilt when needed. Nothing is deleted before you confirm.</p></div></details>
+<details class="faq-item"><summary><span>Why can file size differ from occupied disk space?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>File size describes how much data a file contains. Occupied space can differ because of compression, reserved blocks or several names pointing to the same file. For a quick overview, DiscReveal shows file sizes. Enable “Measure occupied space” under Scan → Filter for a more detailed measurement. It takes longer and counts shared files once. Filesystem metadata, snapshots and backups are outside this measurement.</p></div></details>
+<details class="faq-item"><summary><span>What does an incomplete scan mean?</span><span class="faq-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span></summary><div class="faq-answer"><p>It means some data could not be fully examined, for example because you stopped the scan, access was denied or a file changed. The results you can see are still useful, but they do not cover everything. Check the notice and scan again when needed. An unavailable measurement is identified rather than presented as zero occupied space.</p></div></details>
+            </div>
+        </section>
+
+        <!-- ── Final CTA ─────────────────────────────────────────────────── -->
+        <section class="wrap">
+            <div class="cta-band">
+                <h2 data-i18n="ctaTitle">Find what is taking up your space.</h2>
+                <p data-i18n="ctaBody">Download DiscReveal, choose a drive and get a clearer picture of your storage.</p>
+                <div class="hero-cta">
+                    <a href="https://github.com/markmarkinson/discreveal/releases/latest/download/discreveal-portable.exe" id="cta-download-btn" class="pill-btn pill-btn-primary js-download-link">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0-5-5m5 5 5-5M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span data-i18n="heroDownload">Download for Windows</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="wrap">
+        <div class="footer-row">
+            <div class="footer-links">
+                <a href="/guides/" data-i18n="navGuides">Learn</a>
+                <a href="https://github.com/markmarkinson/discreveal">GitHub</a>
+                <a href="https://github.com/markmarkinson/discreveal/blob/main/LICENSE" data-i18n="footerLicense">License</a>
+                <a href="third-party-notices/" data-i18n="footerNotices">Third-party notices</a>
+            </div>
+            <p class="footer-note" data-i18n="footerBuilt">Built with Tauri, Rust and vanilla JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
